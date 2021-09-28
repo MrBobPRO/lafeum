@@ -14,7 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(["middleware" => "auth"], function () {
-    Route::get('/', 'MainController@index');
+    Route::get('/', 'MainController@index')->name('home');
+    //contacts
+    Route::get('/contacts', 'MainController@contacts')->name('contacts.index');
+    //quotes
+    Route::get('/quotes', 'QuoteController@index')->name('quotes.index');
+    Route::get('/quotes/{id}', 'QuoteController@single')->name('quotes.single');
+    //authors
+    Route::get('/authors', 'AuthorController@index')->name('authors.index');
+    Route::get('/authors/{name}', 'AuthorController@single')->name('authors.single');
+    //categories
+    Route::get('/categories/{name}', 'CategoryController@single')->name('categories.single');
 });
 
 

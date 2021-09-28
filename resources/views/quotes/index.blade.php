@@ -3,7 +3,7 @@
 
 <div class="content">
     <main>
-        <h1>Home</h1>
+        <h1>Quotes</h1>
     </main>
 </div>
 

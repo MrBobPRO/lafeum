@@ -10,4 +10,10 @@ class MainController extends Controller
     {
         return view('home.index');
     }
+
+    public function contacts()
+    {
+        return view('contacts.index');
+    }
+
 }

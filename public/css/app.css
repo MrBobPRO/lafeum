@@ -1,9 +1,134 @@
 
 body {
     color: black;
-    font-size: 16px;
+    margin: 0;
+    background: #EEEEEE;
+}
+:root {
+    --main-color: #04718c;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+p {
+    font-weight: 400;
+    margin: 0 0 1em 0;
+}
+.logo {
+    display: flex;
+}
+.logo__img {
+    width: 100%;
 }
 
-h5 {
-    font-size: 24px;
+/* Content start */
+.content {
+    display: flex;
 }
+/* Content end */
+
+/* Header start */
+.header {
+    background: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+.header__nav {
+    width: 785px;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px 0;
+}
+.header__logo {
+    width: 71px;
+}
+.page-nav {
+    display: flex;
+    margin: 0;
+    padding-left: 30px;
+    gap: 24px;
+}
+.page-nav__item {
+    display: block;
+}
+.page-nav__link {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+}
+.page-nav__link:hover {
+    color: red;
+}
+/* Header end */
+
+/* Footer start */
+.fixed-scroll {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 10;
+}
+.fixed-scroll__button {
+    box-shadow: 0 3px 5px -1px rgb(0 0 0 / 20%), 0 6px 10px 0 rgb(0 0 0 / 14%), 0 1px 18px 0 rgb(0 0 0 / 12%);
+    background: var(--main-color);
+    color: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+.footer {
+    background: var(--main-color);
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0 24px;
+    align-items: center;
+    color: white;
+}
+.footer__logo {
+    width: 88px;
+}
+.footer__terms {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+}
+.footer__terms-link {
+    color: white;
+}
+.footer__divider {
+    height: 1px;
+    background: white;
+    width: 33.3%;
+}
+.copyright {
+    margin: 24px 0;
+}
+.site-share {
+    display: flex;
+    gap: 16px;
+}
+.site-share__link {
+    width: 24px;
+    padding: 8px;
+    background: #348ba6;
+    border-radius: 50%;
+    display: flex;
+}
+/* Footer end */
+
+
+
+
+
+
+

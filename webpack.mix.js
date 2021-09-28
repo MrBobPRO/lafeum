@@ -14,7 +14,11 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .styles([
         'resources/css/main/styles.css',
-        'resources/css/home/styles.css',],
+        'resources/css/home/styles.css',
+        'resources/css/authors/styles.css',
+        'resources/css/contacts/styles.css',
+        'resources/css/quotes/styles.css',
+        'resources/css/categories/styles.css',],
         'public/css/app.css');
 
 if (mix.inProduction()) {

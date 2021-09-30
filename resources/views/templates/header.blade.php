@@ -1,19 +1,28 @@
 <header class="header">
-    <nav class="header__nav">
+    <div class="primary-container header__primary-container">
         <a class="logo header__logo" href="#">
-            <img class="logo__img" src="{{ asset('img/main/lafeum-ru-logo.png') }}" alt="Лафеюм лого">
+            <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдунаҳо лого">
         </a>
-
-        <ul class="page-nav">
-            <li class="page-nav__item">
-                <a class="page-nav__link page-nav__link--active" href="{{ route('quotes.index') }}">Цитаты</a>
-            </li>
-            <li class="page-nav__item">
-                <a class="page-nav__link" href="{{ route('authors.index') }}">Авторы</a>
-            </li>
-            <li class="page-nav__item">
-                <a class="page-nav__link" href="{{ route('contacts.index') }}">Контакты</a>
-            </li>
-        </ul>
-    </nav>
+    
+        <form class="search" action="#">
+            <span class="material-icons-outlined search__icon">search</span>
+            <input class="search__input" placeholder="Поиск по дурдонахо" type="text" name="search" id="search">
+        </form>
+    
+        <nav class="header__nav">
+            <ul class="page-nav">
+                <li class="page-nav__item">
+                    <a class="page-nav__link home-link" href="{{ route('home') }}"><span class="material-icons home-link__span">home</span></a>
+                </li>
+    
+                <li class="page-nav__item">
+                    <a class="page-nav__link" href="{{ route('quotes.index') }}">Цитаты</a>
+                </li>
+    
+                <li class="page-nav__item">
+                    <a class="page-nav__link" href="{{ route('authors.index') }}">Авторы</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
 </header>

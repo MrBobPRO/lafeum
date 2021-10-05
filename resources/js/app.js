@@ -9,18 +9,23 @@ $.ajaxSetup({
 var quotes_owl = $('.quotes-carousel');
 if (quotes_owl) quotes_owl.owlCarousel({
     loop: true,
-    margin: 0,
+    margin: 20,
     nav: false,
     items: 1,
     dots: false
 });
 
 // Owl carousel navigations
-window.prev_slide = function () {
-    quotes_owl.trigger('next.owl.carousel');
-}
+let owl_prev_nav = document.getElementById('owl_prev_nav'),
+    owl_next_nav = document.getElementById('owl_next_nav');
 
-window.next_slide = function () {
-    quotes_owl.trigger('prev.owl.carousel');
-}
+if(owl_prev_nav)
+    owl_prev_nav.addEventListener("click", function () {
+        quotes_owl.trigger('prev.owl.carousel');
+    });
+
+if(owl_next_nav)
+    owl_next_nav.addEventListener("click", function () {
+        quotes_owl.trigger('next.owl.carousel');
+    });
 //--------------Owl Carousel end----------------

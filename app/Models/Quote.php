@@ -19,4 +19,9 @@ class Quote extends Model
         return $this->belongsTo(Author::class);
     }
 
+    public function scopePopular($query) 
+    {
+        return $query->where('popular', true);
+    }
+
 }

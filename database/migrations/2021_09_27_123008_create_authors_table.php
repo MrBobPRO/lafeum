@@ -19,6 +19,7 @@ class CreateAuthorsTable extends Migration
             $table->string('transliteration'); //used in url (translitaration from ru to en)
             $table->text("biography")->nullable();
             $table->text("photo")->nullable();
+            $table->boolean('popular');
             $table->timestamps();
         });
     }

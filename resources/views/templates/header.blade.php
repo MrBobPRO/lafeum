@@ -5,22 +5,22 @@
         </a>
     
         <form class="search" action="#">
-            <span class="material-icons-outlined search__icon">search</span>
-            <input class="search__input" placeholder="Поиск по дурдонахо" type="text" name="search" id="search">
+            <span class="material-icons-outlined unselectable search__icon">search</span>
+            <input class="search__input" placeholder="Ҷӯстуҷӯ..." type="text" name="search" id="search">
         </form>
     
         <nav class="header__nav">
             <ul class="page-nav">
                 <li class="page-nav__item">
-                    <a class="page-nav__link home-link" href="{{ route('home') }}"><span class="material-icons home-link__span">home</span></a>
+                    <a class="page-nav__link home-link" href="{{ route('home') }}"><span class="material-icons unselectable home-link__span">home</span></a>
                 </li>
     
                 <li class="page-nav__item">
-                    <a class="page-nav__link" href="{{ route('quotes.index') }}">Цитаты</a>
+                    <a class="page-nav__link @if($route == "quotes.index") page-nav__link--active @endif" href="{{ route('quotes.index') }}">Иқтибосҳо</a>
                 </li>
     
                 <li class="page-nav__item">
-                    <a class="page-nav__link" href="{{ route('authors.index') }}">Авторы</a>
+                    <a class="page-nav__link" href="{{ route('authors.index') }}">Муаллифон</a>
                 </li>
             </ul>
         </nav>

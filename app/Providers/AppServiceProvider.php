@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Author;
+use App\Models\Quote;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +28,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+
+        View::composer("templates.master", function ($view) {
+            $view->with('route', Route::currentRouteName());
+        });
+
+        View::composer("templates.card_switcher", function ($view) {
+
+            $popular_quote = Quote::popular()->inRandomOrder()->first();
+            $popular_author = Author::popular()->where('id', '!=', $popular_quote->author_id)->inRandomOrder()->first();
+
+            $view->with("popular_quote", $popular_quote)
+                ->with("popular_author", $popular_author);
+        });
     }
 }

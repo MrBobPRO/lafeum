@@ -17,6 +17,7 @@ class CreateQuotesTable extends Migration
             $table->id();
             $table->text('body');
             $table->integer('author_id');
+            $table->boolean('popular');
             $table->timestamps();
         });
     }

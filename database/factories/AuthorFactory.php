@@ -25,7 +25,8 @@ class AuthorFactory extends Factory
             "name" => $this->faker->firstName() . ' ' . $this->faker->lastName(),
             "transliteration" => 'abc',
             "biography" => $this->faker->realTextBetween(50, 400),
-            "photo" => '1.jpg'
+            "photo" => '1.jpg',
+            "popular" => rand(0,1)
         ];
     }
 

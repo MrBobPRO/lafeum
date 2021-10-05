@@ -6,13 +6,13 @@
         </a>
 
         <div class="footer__terms">
-            <a class="footer__terms-link" href="#">Политика конфиденциальности</a>
-            <a class="footer__terms-link" href="#">Пользовательское соглашение</a>
-            <p class="copyright">© 2017 - {{ date("Y")}} — Дурдунаҳо. Все права защищены.</p>
+            <a class="footer__terms-link" href="#">Сиёсати маҳрамият</a>
+            <a class="footer__terms-link" href="#">Аҳдномаи истифодабарӣ</a>
+            <p class="copyright">© 2017 - {{ date("Y")}} — ДУРДУНАҲО. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
         </div>
 
         <div class="footer__socials">
-            <p class="footer__socials-text">Читайте нас:</p>
+            <p class="footer__socials-text">Моро мутолиа намоед:</p>
 
             <div class="socials">
                 <a class="socials__link" href="#">

@@ -6,7 +6,7 @@
     <section class="welcome">
 
         <aside class="categories">
-            <h1 class="main-title categories__title">Категории</h1>
+            <h1 class="main-title categories__title">Категорияҳо</h1>
             <div class="categories__list">
                 @foreach ($categories as $cat)
                     <a class="categories__link" href="#">{{$cat->name}}</a>
@@ -18,20 +18,22 @@
         <div class="welcome__body">
             {{-- About start --}}
             <div class="about">
-                <h1 class="main-title about__title">О Дурдунаҳо</h1>
+                <h1 class="main-title about__title">Роҷеъ ба сомона</h1>
                 <p class="about__text">
-                    Уважаемый читатель, искренне рады видеть вас на нашем ресурсе! Сайт представляет собой коллекцию самых популярных, вдохновляющих и мотивационных цитат, высказываний и афоризмов от выдающихся личностей, ученых, философов и других, заслуживающих внимания, авторов. Ресурс посвящен основным актуальным вопросам существования человека - вопросам бытия, смысла жизни, любви к жизни, личностного роста, свободы воли и мн. др. Цель ресурса - доступность необходимых знаний для формирования рационального мировоззрения и миропонимания, раскрытию личностного потенциала и самореализации. Для удобства навигации, весь материал сгруппирован по темам. Есть деление по авторам, где вы можете почитать конкретного заинтересовавшего вас ученого или философа, художника или артиста, писателя. На сайте есть подборка пословиц и поговорок народов мира, и ставшие "крылатыми" фразы из известных фильмов и сериалов. В будущем, планируется расширять возможности сайта, например, можно будет размещать свои авторские цитаты, публикации и научные работы, посвященные вопросам современного общества, обсуждать их на внутреннем форуме. Следите за обновлениями! Счастливого путешествия в мир знаний, мудрости и любви!
+                    Хуш омадед, хонандаи муҳтарам.<br><br>
+                    Асоси сомона-ин иқтибосҳо ва афоризмҳо аз тамоми дунё, аз одамони комилан гуногун-шуҳратманд, на начандон машҳур, олимон, файласуфон аст. Гуфторҳои нишонрас ва ҳадафманди онҳо то рӯзҳои мо  расидаанд. Инсонҳои мазкур ба хотири саодати инсоният зиндагӣ ва эҷод кардаанд. Вақте бо андешаҳо ва гуфтори уламо ва мутафаккирони муосир ошно мешавед, метавон ба масоили мубрами ҷомеа посух дарёфт кард. <br><br>
+                    Мутолиаи хуш.
                 </p>
             </div>  {{-- About end --}}
             
             {{-- Latest quotes start --}}
             <div class="latest-quotes">
-                <h1 class="main-title latest-quotes__title">Последние цитаты</h1>
+                <h1 class="main-title latest-quotes__title">Иқтибосҳои ахир</h1>
                 {{-- Owl carousel container start --}}
                 <div class="owl-carousel-container">
                     <div class="owl-carousel quotes-carousel">
                         @foreach ($latest_quotes as $q)
-                            <div class="card">
+                            <div class="card card_shadow_s">
                                 <div class="card__img-container">
                                     <img class="card__img" src="{{ asset('img/authors/thumbs/' . $q->author->photo) }}">
                                 </div>
@@ -54,7 +56,7 @@
                                     </div>
                 
                                     <div class="card__more card__more--center">
-                                        <button class="card__more-btn card__more-btn--vertical">Читать дальше
+                                        <button class="card__more-btn card__more-btn--vertical">Идомаашро мутолиа кунед
                                             <span class="material-icons-outlined card__more-icon">expand_more</span>
                                         </button>
                                     </div>
@@ -64,13 +66,41 @@
                     </div>
 
                     {{-- Carousel navs --}}
-                    <span class="material-icons-outlined owl-navs no-selection owl-nav-prev" onclick="window.prev_slide()">arrow_back_ios</span>
-                    <span class="material-icons-outlined owl-navs no-selection owl-nav-next" onclick="window.next_slide()">arrow_forward_ios</span>
+                    <span class="material-icons-outlined unselectable owl-nav owl-nav-prev quotes-carousel__nav-prev" id="owl_prev_nav">arrow_back_ios</span>
+                    <span class="material-icons-outlined unselectable owl-nav owl-nav-next quotes-carousel__nav-next" id="owl_next_nav">arrow_forward_ios</span>
                 </div>  {{-- Owl carousel container end --}}
 
             </div> {{-- Latest quotes end --}}
-        </div> {{-- Welcome Bodt end --}}
+        </div> {{-- Welcome Body end --}}
     </section> {{-- Welcome end --}}
+
+    @include('templates.card_switcher', ['class_name' => 'home__card-switcher'])
+
+    <section class="popular-categories">
+        <h1 class="main-title">Категорияҳои маъмул</h1>
+
+        <div class="popular-categories__list">
+            <a href="#" class="category-block">
+                <img class="category-block__image" src="{{ asset('img/home/categories/1.jpg') }}" alt="Арзиш ва ҳадафҳо">
+                <p class="category-block__name">Арзиш ва ҳадафҳо</p> 
+            </a>
+
+            <a href="#" class="category-block">
+                <img class="category-block__image" src="{{ asset('img/home/categories/2.jpg') }}" alt="Бунёди ҳастӣ">
+                <p class="category-block__name">Бунёди ҳастӣ</p> 
+            </a>
+
+            <a href="#" class="category-block">
+                <img class="category-block__image" src="{{ asset('img/home/categories/3.jpg') }}" alt="Илм ва Фалсафа">
+                <p class="category-block__name">Илм ва Фалсафа</p> 
+            </a>
+
+            <a href="#" class="category-block">
+                <img class="category-block__image" src="{{ asset('img/home/categories/4.jpg') }}" alt="Ҷамъият">
+                <p class="category-block__name">Ҷамъият</p> 
+            </a>
+        </div>
+    </section>
 
 </main>
 @endsection

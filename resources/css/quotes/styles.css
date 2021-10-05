@@ -1,0 +1,7 @@
+
+.quotes {
+    flex-direction: column;
+}
+.quotes__card-switcher {
+    margin: 30px 0 20px;
+}

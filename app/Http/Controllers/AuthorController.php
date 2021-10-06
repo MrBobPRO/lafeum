@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
 {
     public function index()
     {
-        return view('authors.index');
+        $authors = Author::orderBy('name', 'asc')->paginate(9);
+
+        return view('authors.index', compact('authors'));
     }
 
     public function single($name)

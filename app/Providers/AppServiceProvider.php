@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Author;
 use App\Models\Quote;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
@@ -29,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        Paginator::useBootstrap();
 
         View::composer("templates.master", function ($view) {
             $view->with('route', Route::currentRouteName());

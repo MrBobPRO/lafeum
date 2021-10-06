@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quote;
 use Illuminate\Http\Request;
 
 class QuoteController extends Controller
 {
     public function index()
     {
-        return view('quotes.index');
+        $quotes = Quote::latest()->paginate(6);
+
+        return view('quotes.index', compact('quotes'));
     }
 
     public function single($id)

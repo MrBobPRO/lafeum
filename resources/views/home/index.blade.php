@@ -1,7 +1,7 @@
 @extends('templates.master')
 @section('content')
 
-<main class="primary-container home">
+<main class="primary-wrapper home">
     {{-- Welcome start --}}
     <section class="welcome">
 

@@ -5,17 +5,17 @@
     <div class="card-switcher__item card-switcher__item-quote">
         <h1 class="main-title">Иқтибосҳои маъмул</h1>
 
-        <div class="card card_size_s card_shadow_s">
-            <div class="card__img-container card_size_s__img-container">
-                <img class="card__img card_size_s__img" src="{{ asset('img/authors/thumbs/' . $popular_quote->author->photo) }}">
+        <div class="card card_size_sm card_shadow_sm">
+            <div class="card__img-container card__img-container_size_sm">
+                <img class="card__img card__img_size_sm" src="{{ asset('img/authors/thumbs/' . $popular_quote->author->photo) }}">
             </div>
 
             <div class="card__body">
-                <div class="card__header card_size_s__header">
-                    <h2 class="card__header-title card_size_s__header-title">{{ $popular_quote->author->name }}</h2>
+                <div class="card__header card__header_size_sm">
+                    <h2 class="card__header-title card__header-title_size_sm">{{ $popular_quote->author->name }}</h2>
                 </div>
 
-                <div class="card__text card_size_s__text">
+                <div class="card__text card__text_size_sm">
                     {{ $popular_quote->body}}
                 </div>
 
@@ -35,17 +35,17 @@
     <div class="card-switcher__item card-switcher__item-author">
         <h1 class="main-title">Муаллифони машҳур</h1>
 
-        <div class="card card_size_s card_shadow_s">
-            <div class="card__img-container card_size_s__img-container">
-                <img class="card__img card_size_s__img" src="{{ asset('img/authors/thumbs/' . $popular_author->photo) }}">
+        <div class="card card_size_sm card_shadow_sm">
+            <div class="card__img-container card__img-container_size_sm">
+                <img class="card__img card__img_size_sm" src="{{ asset('img/authors/thumbs/' . $popular_author->photo) }}">
             </div>
 
             <div class="card__body">
-                <div class="card__header card_size_s__header">
-                    <h2 class="card__header-title card_size_s__header-title">{{ $popular_author->name }}</h2>
+                <div class="card__header card__header_size_sm">
+                    <h2 class="card__header-title card__header-title_size_sm">{{ $popular_author->name }}</h2>
                 </div>
 
-                <div class="card__text card_size_s__text">
+                <div class="card__text card__text_size_sm">
                     {{ $popular_author->biography}}
                 </div>
 

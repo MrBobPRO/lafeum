@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="primary-container footer__primary-container">
+    <div class="primary-wrapper footer__primary-wrapper">
 
         <a href="#" class="logo footer__logo">
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Лафеюм лого">

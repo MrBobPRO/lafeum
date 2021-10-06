@@ -1,6 +1,6 @@
 <header class="header">
-    <div class="primary-container header__primary-container">
-        <a class="logo header__logo" href="#">
+    <div class="primary-wrapper header__primary-wrapper">
+        <a class="logo header__logo" href="{{ route("home") }}">
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдунаҳо лого">
         </a>
     
@@ -12,7 +12,7 @@
         <nav class="header__nav">
             <ul class="page-nav">
                 <li class="page-nav__item">
-                    <a class="page-nav__link home-link" href="{{ route('home') }}"><span class="material-icons unselectable home-link__span">home</span></a>
+                    <a class="page-nav__link home-link @if($route == "home") home-link--active @endif" href="{{ route('home') }}"><span class="material-icons unselectable home-link__span">home</span></a>
                 </li>
     
                 <li class="page-nav__item">
@@ -20,7 +20,7 @@
                 </li>
     
                 <li class="page-nav__item">
-                    <a class="page-nav__link" href="{{ route('authors.index') }}">Муаллифон</a>
+                    <a class="page-nav__link @if($route == "authors.index") page-nav__link--active @endif" href="{{ route('authors.index') }}">Муаллифон</a>
                 </li>
             </ul>
         </nav>

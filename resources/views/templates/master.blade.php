@@ -7,6 +7,10 @@
 
         <title>Дурдунаҳо</title>
 
+        <meta name="robots" content="none"/>
+        <meta name="googlebot" content="noindex, nofollow"/>
+        <meta name="yandex" content="none"/>
+
         {{-- Raleway Google Fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

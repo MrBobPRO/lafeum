@@ -30,13 +30,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        Paginator::useBootstrap();
+        // Paginator::useBootstrap();
 
         View::composer("templates.master", function ($view) {
             $view->with('route', Route::currentRouteName());
         });
 
-        View::composer("templates.card_switcher", function ($view) {
+        View::composer("templates.refresher", function ($view) {
 
             $popular_quote = Quote::popular()->inRandomOrder()->first();
             $popular_author = Author::popular()->where('id', '!=', $popular_quote->author_id)->inRandomOrder()->first();

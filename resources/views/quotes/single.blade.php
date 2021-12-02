@@ -1,5 +1,5 @@
 @extends('templates.master')
-@section('content')
+@section('main')
 
 <div class="content">
     <main>

@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="primary-wrapper footer__primary-wrapper">
+    <div class="main-container footer__inner">
 
         <a href="#" class="logo footer__logo">
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Лафеюм лого">
@@ -16,19 +16,19 @@
 
             <div class="socials">
                 <a class="socials__link" href="#">
-                    <img class="socials__img" src="{{ asset('img/main/twitter.png') }}" alt="">
+                    @include('svgs.twitter')
                 </a>
         
                 <a class="socials__link" href="#">
-                    <img class="socials__img" src="{{ asset('img/main/telegram.png') }}" alt="">
+                    @include('svgs.telegram')
                 </a>
         
                 <a class="socials__link" href="#">
-                    <img class="socials__img" src="{{ asset('img/main/facebook.png') }}" alt="">
+                    @include('svgs.facebook')
                 </a>
         
                 <a class="socials__link" href="#">
-                    <img class="socials__img" src="{{ asset('img/main/instagram.png') }}" alt="">
+                    @include('svgs.instagram')
                 </a>
             </div>
         </div>

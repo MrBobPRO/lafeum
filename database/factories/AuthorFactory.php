@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Author;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class AuthorFactory extends Factory
 {
@@ -23,7 +24,7 @@ class AuthorFactory extends Factory
     {
         return [
             "name" => $this->faker->firstName() . ' ' . $this->faker->lastName(),
-            "transliteration" => 'abc',
+            "url" => Str::random(10),
             "biography" => $this->faker->realTextBetween(50, 400),
             "photo" => '1.jpg',
             "popular" => rand(0,1)

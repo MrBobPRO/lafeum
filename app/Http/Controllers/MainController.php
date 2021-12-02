@@ -11,17 +11,12 @@ class MainController extends Controller
     public function index()
     {
         $categories = Category::orderBy('name')
-                ->select('name', 'transliteration')
+                ->select('name', 'url')
                 ->get();
 
-        $latest_quotes = Quote::latest()->take(5)->get();
+        $latest_quotes = Quote::latest()->take(8)->get();
 
         return view('home.index', compact('categories', 'latest_quotes'));
-    }
-
-    public function contacts()
-    {
-        return view('contacts.index');
     }
 
 }

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content=" {{ csrf_token() }}">
 
-        <title>Дурдунаҳо</title>
+        <title>Дурдонаҳо</title>
 
         <meta name="robots" content="none"/>
         <meta name="googlebot" content="noindex, nofollow"/>
@@ -21,14 +21,20 @@
         <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.theme.default.min.css') }}">
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/authors.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/categories.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/home.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/quotes.css') }}">
+
+        {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
     </head>
 
     <body>
         @include('templates.header')
-        <div class="content">
-            @yield('content')
-        </div>
+        <main class="main" id="main" role="main">
+            @yield('main')
+        </main>
         @include('templates.footer')
         
         {{-- JQuery --}}
@@ -36,7 +42,8 @@
         {{-- Owl Carousel --}}
         <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
 
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ asset('js/uncompressed.js') }}"></script>
+        {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
     </body>
 
 </html>

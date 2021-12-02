@@ -1,7 +1,7 @@
 @extends('templates.master')
-@section('content')
+@section('main')
 
-<main class="primary-wrapper home">
+<div class="main-container home">
     {{-- Welcome start --}}
     <section class="welcome">
 
@@ -33,7 +33,7 @@
                 <div class="owl-carousel-container">
                     <div class="owl-carousel quotes-carousel">
                         @foreach ($latest_quotes as $q)
-                            <div class="card card_shadow_s">
+                            <div class="card">
                                 <div class="card__img-container">
                                     <img class="card__img" src="{{ asset('img/authors/thumbs/' . $q->author->photo) }}">
                                 </div>
@@ -48,16 +48,18 @@
                                     <div class="card__header">
                                         <h2 class="card__header-title">{{ $q->author->name }}</h2>
                                         <p class="card__header-hash">#{{ $q->id }}</p>
-                                        <span class="material-icons-outlined card__header-icon">screen_share</span>
+                                        <span class="card__header-icon">
+                                            @include("svgs.share")
+                                        </span>
                                     </div>
                 
                                     <div class="card__text">
                                         {{ $q->body}}
                                     </div>
                 
-                                    <div class="card__more card__more--center">
-                                        <button class="card__more-btn card__more-btn--vertical">Идомаашро мутолиа кунед
-                                            <span class="material-icons-outlined card__more-icon">expand_more</span>
+                                    <div class="more more_align_center">
+                                        <button class="more__button more__button--vertical">Идомаашро мутолиа кунед
+                                            <span class="material-icons-outlined more__icon">expand_more</span>
                                         </button>
                                     </div>
                                 </div>
@@ -74,7 +76,10 @@
         </div> {{-- Welcome Body end --}}
     </section> {{-- Welcome end --}}
 
-    @include('templates.card_switcher', ['class_name' => 'home__card-switcher'])
+    <section class="refresher home__refresher">
+        @include('templates.refresher')
+    </section>
+
 
     <section class="popular-categories">
         <h1 class="main-title">Категорияҳои маъмул</h1>
@@ -102,5 +107,5 @@
         </div>
     </section>
 
-</main>
+</div>
 @endsection

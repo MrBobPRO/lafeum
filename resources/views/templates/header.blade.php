@@ -1,5 +1,5 @@
 <header class="header">
-    <div class="primary-wrapper header__primary-wrapper">
+    <div class="main-container header__inner">
         <a class="logo header__logo" href="{{ route("home") }}">
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдунаҳо лого">
         </a>

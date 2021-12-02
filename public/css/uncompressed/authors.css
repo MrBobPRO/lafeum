@@ -2,7 +2,7 @@
 .authors {
     flex-direction: column;
 }
-.authors__card-switcher {
+.authors__refresher {
     margin: 30px 0;
 }
 .authors-list-wrapper {
@@ -13,4 +13,8 @@
     flex-direction: row;
     gap: 30px;
     flex-wrap: wrap;
+}
+.authors-list .pagination-container {
+    width: 100%;
+    margin-top: 10px;
 }

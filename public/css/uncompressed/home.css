@@ -47,7 +47,7 @@
 /* Categoreis end */
 
 .welcome__body {
-    width: calc(100% - 320px);
+    width: calc(100% - 305px);
 }
 
 /* About start */
@@ -55,7 +55,7 @@
     background: white;
     border-radius: var(--theme-border-radius);
     box-shadow: var(--theme-box-shadow);
-    padding: 30px 50px;
+    padding: 30px 52px;
     margin-bottom: 30px;
 }
 .about__title {
@@ -66,6 +66,7 @@
     margin-bottom: 0;
 }
 /* About end */
+
 
 /* Latest Quotes start */
 .latest-quotes {
@@ -87,13 +88,19 @@
     left: auto;
     right: 35px;
 }
+.latest-quotes .owl-carousel-container {
+    margin: -5px;
+}
+.quotes-carousel .card {
+    margin: 5px;
+}
 /* Latest Quotes end */
 
-/* Switcher start */
-.home__card-switcher {
+/* Refresher start */
+.home__refresher {
     margin: 30px 0 20px;
 }
-/* Switcher end */
+/* Refresher end */
 
 /* Category start */
 .popular-categories {

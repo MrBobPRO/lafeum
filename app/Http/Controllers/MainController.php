@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Author;
 use App\Models\Category;
 use App\Models\Quote;
 use Illuminate\Http\Request;
@@ -17,6 +18,11 @@ class MainController extends Controller
         $latest_quotes = Quote::latest()->take(8)->get();
 
         return view('home.index', compact('categories', 'latest_quotes'));
+    }
+
+    public function update_refresher()
+    {
+        return view("templates.refresher");
     }
 
 }

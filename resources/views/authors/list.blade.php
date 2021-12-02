@@ -15,7 +15,7 @@
         </div>
 
         <div class="more more_align_right">
-            <a href="#" class="more__button">Муфассал
+            <a href="{{ route('authors.single', $a->url) }}" class="more__button">Муфассал
                 <span class="material-icons-outlined more__icon">chevron_right</span>
             </a>
         </div>
@@ -23,4 +23,4 @@
 </div>
 @endforeach
 
-{{ $authors->onEachSide(2)->links("templates.pagination") }}
+{{ $authors->onEachSide(1)->links("templates.pagination") }}

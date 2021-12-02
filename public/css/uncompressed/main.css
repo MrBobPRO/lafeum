@@ -93,7 +93,8 @@ button {
 }
 .card__categories {
     display: flex;
-    gap: 20px;
+    gap: 10px 20px;
+    flex-wrap: wrap;
 }
 .card__categories-item {
     color: var(--secondary-color);;
@@ -112,6 +113,7 @@ button {
 .card__header-hash {
     color: var(--secondary-color);
     margin: 0;
+    font-size: 14px;
 }
 .card__header-icon {
     cursor: pointer;
@@ -341,7 +343,7 @@ button {
 }
 .page-nav__link--active {
     color: var(--main-color);
-    font-weight: 600;
+    font-weight: 700;
 }
 .home-link {
     display: flex;

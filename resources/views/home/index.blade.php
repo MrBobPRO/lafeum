@@ -9,7 +9,7 @@
             <h1 class="main-title categories__title">Категорияҳо</h1>
             <div class="categories__list">
                 @foreach ($categories as $cat)
-                    <a class="categories__link" href="#">{{$cat->name}}</a>
+                    <a class="categories__link" href="{{ route('categories.single', $cat->url) }}">{{$cat->name}}</a>
                 @endforeach
             </div>
         </aside>
@@ -41,7 +41,8 @@
                                 <div class="card__body">
                                     <div class="card__categories">
                                         @foreach ($q->categories as $c)
-                                            <a class="card__categories-item" href="#">{{ $c->name }}</a>
+                                            @if($loop->index > 1) @break @endif
+                                            <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
                                         @endforeach
                                     </div>
                 
@@ -76,7 +77,7 @@
         </div> {{-- Welcome Body end --}}
     </section> {{-- Welcome end --}}
 
-    <section class="refresher home__refresher">
+    <section class="refresher home__refresher" id="refresher">
         @include('templates.refresher')
     </section>
 
@@ -85,22 +86,22 @@
         <h1 class="main-title">Категорияҳои маъмул</h1>
 
         <div class="popular-categories__list">
-            <a href="#" class="category-block">
+            <a href="{{ route('categories.single', 'arzish_va_hadafho') }}" class="category-block">
                 <img class="category-block__image" src="{{ asset('img/home/categories/1.jpg') }}" alt="Арзиш ва ҳадафҳо">
                 <p class="category-block__name">Арзиш ва ҳадафҳо</p> 
             </a>
 
-            <a href="#" class="category-block">
+            <a href="{{ route('categories.single', 'buniodi_hasti') }}" class="category-block">
                 <img class="category-block__image" src="{{ asset('img/home/categories/2.jpg') }}" alt="Бунёди ҳастӣ">
                 <p class="category-block__name">Бунёди ҳастӣ</p> 
             </a>
 
-            <a href="#" class="category-block">
+            <a href="{{ route('categories.single', 'ilm_va_falsafa') }}" class="category-block">
                 <img class="category-block__image" src="{{ asset('img/home/categories/3.jpg') }}" alt="Илм ва Фалсафа">
                 <p class="category-block__name">Илм ва Фалсафа</p> 
             </a>
 
-            <a href="#" class="category-block">
+            <a href="{{ route('categories.single', 'jamaiyat') }}" class="category-block">
                 <img class="category-block__image" src="{{ asset('img/home/categories/4.jpg') }}" alt="Ҷамъият">
                 <p class="category-block__name">Ҷамъият</p> 
             </a>

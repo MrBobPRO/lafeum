@@ -15,7 +15,7 @@
                 {{ $popular_quote->body}}
             </div>
             <div class="more more_align_right">
-                <a href="#" class="more__button">Муфассал
+                <a href="{{ route('quotes.single', $popular_quote->id) }}" class="more__button">Муфассал
                     <span class="material-icons-outlined more__icon">chevron_right</span>
                 </a>
             </div>
@@ -25,7 +25,7 @@
 </div>
 {{-- Popular quote end --}}
 
-<button class="refresher__icon">
+<button class="refresher__icon" id="refresher_icon">
     @include("svgs.infinity")
 </button>
 
@@ -45,7 +45,7 @@
                 {{ $popular_author->biography}}
             </div>
             <div class="more more_align_right">
-                <a href="#" class="more__button">Муфассал
+                <a href="{{ route('authors.single', $popular_author->url) }}" class="more__button">Муфассал
                     <span class="material-icons-outlined more__icon">chevron_right</span>
                 </a>
             </div>

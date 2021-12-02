@@ -10,7 +10,7 @@
         </p>
     </section>   {{-- Page description end --}}
 
-    <section class="refresher authors__refresher">
+    <section class="refresher authors__refresher" id="refresher">
         @include('templates.refresher')
     </section>
 

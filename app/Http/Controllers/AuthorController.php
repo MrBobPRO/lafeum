@@ -14,8 +14,11 @@ class AuthorController extends Controller
         return view('authors.index', compact('authors'));
     }
 
-    public function single($name)
+    public function single($url)
     {
-        return view('authors.single');
+        $author = Author::where("url", $url)->first();
+        $quotes = $author->quotes()->paginate(5);
+
+        return view('authors.single', compact("author", "quotes"));
     }
 }

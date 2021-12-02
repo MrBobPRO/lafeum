@@ -16,11 +16,11 @@
                 </li>
     
                 <li class="page-nav__item">
-                    <a class="page-nav__link @if($route == "quotes.index") page-nav__link--active @endif" href="{{ route('quotes.index') }}">Иқтибосҳо</a>
+                    <a class="page-nav__link @if($route == "quotes.index" || $route == "quotes.single" || $route == "categories.single") page-nav__link--active @endif" href="{{ route('quotes.index') }}">Иқтибосҳо</a>
                 </li>
     
                 <li class="page-nav__item">
-                    <a class="page-nav__link @if($route == "authors.index") page-nav__link--active @endif" href="{{ route('authors.index') }}">Муаллифон</a>
+                    <a class="page-nav__link @if($route == "authors.index" || $route == "authors.single") page-nav__link--active @endif" href="{{ route('authors.index') }}">Муаллифон</a>
                 </li>
             </ul>
         </nav>

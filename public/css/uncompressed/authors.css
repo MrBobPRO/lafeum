@@ -18,3 +18,16 @@
     width: 100%;
     margin-top: 10px;
 }
+.single-author {
+    flex-direction: column;
+}
+.single-author__about .card {
+    align-items: center;
+    padding: 30px 85px;
+}
+.single-author__about .card__header {
+    margin-top: 0;
+}
+.single-author__about .card__img-container {
+    padding: 0;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,15 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(["middleware" => "auth"], function () {
-    Route::get('/', 'MainController@index')->name('home');
+    Route::get("/", "MainController@index")->name("home");
     //quotes
-    Route::get('/quotes', 'QuoteController@index')->name('quotes.index');
-    Route::get('/quotes/{id}', 'QuoteController@single')->name('quotes.single');
+    Route::get("/quotes", "QuoteController@index")->name("quotes.index");
+    Route::get("/quotes/{id}", "QuoteController@single")->name("quotes.single");
     //authors
-    Route::get('/authors', 'AuthorController@index')->name('authors.index');
-    Route::get('/authors/{name}', 'AuthorController@single')->name('authors.single');
+    Route::get("/authors", "AuthorController@index")->name("authors.index");
+    Route::get("/authors/{name}", "AuthorController@single")->name("authors.single");
     //categories
-    Route::get('/categories/{name}', 'CategoryController@single')->name('categories.single');
+    Route::get("/categories/{url}", "CategoryController@single")->name("categories.single");
+
+    Route::post("/refresher/update", "MainController@update_refresher")->name("refresher.update");
+
 });
 
 
@@ -30,8 +34,8 @@ Route::group(["middleware" => "auth"], function () {
 
 //--------------------------Dasboard start---------------------------
 Route::group(["middleware" => "auth"], function () {
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::get("/dashboard", "DashboardController@index");
 });
 //---------------------------Dasboard end---------------------------
 
-require __DIR__.'/auth.php';
+require __DIR__."/auth.php";

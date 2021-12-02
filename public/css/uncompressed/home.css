@@ -93,6 +93,13 @@
 }
 .quotes-carousel .card {
     margin: 5px;
+    padding-right: 30px;
+}
+.quotes-carousel .card__text {
+    padding-right: 75px;
+}
+.quotes-carousel .more {
+    padding-right: 55px;
 }
 /* Latest Quotes end */
 

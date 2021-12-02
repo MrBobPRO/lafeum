@@ -7,6 +7,7 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Quote;
 use App\Models\User;
+use Faker\Factory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -35,16 +36,19 @@ class DatabaseSeeder extends Seeder
         }
 
         // quotes factory
-        Quote::factory()->count(20)->create();
+        Quote::factory()->count(60)->create();
 
         //categories
         $categories = ['Арзиш ва ҳадафҳо', 'Ахлоқ ва масъулият', 'Ақли эҳсосӣ', 'Бадгумонӣ', 'Бунёди ҳастӣ', 'Дастовардҳо ва сахтгирӣ', 'Зиндагии ғайримаъмулӣ ', 'Идеалӣ ва оптимизм ', 'Илм ва Фалсафа', 'Интеллект ва тафаккур', 'Маънии ҳаёт ва хушбахтӣ', 'Маъруфияти илм', 'Мураббиягарӣ', 'Муҳаббат ба ҳаёт', 'Муҳити зист ва муносибат', 'Огоҳӣ', 'Олам ва космология', 'Ояндапажӯҳӣ', 'Роҳбар', 'Рушди шахсият', 'Сабки зиндагии солим', 'Салоҳиятнокӣ', 'Соҳибкорӣ', 'Тамаддун', 'Таърихи ҳаёт дар рӯи замин', 'Таҳсилот', 'Фанноварӣ', 'Хатарҳо ва хавфҳо', 'Худбоварӣ', 'Худидоракунӣ', 'Эрудиссия', 'Эҷодиёт', 'Қобилият ва Захираҳо', 'Ҳазли соҳавӣ', 'Ҷамъият', 'Ҷаҳонбинӣ'];
 
+
+
         foreach($categories as $cat) {
+            $faker = Factory::create("ru_RU");
             Category::create([
                 "name" => $cat,
                 "url" => Helper::transliterate_into_latin($cat),
-                "description" => "Здесь собраны лучшие цитаты, афоризмы и высказывания великих ученых и мыслителей, известных и успешных людей на предмет этой темы."
+                "description" => $faker->realTextBetween(50, 400),
             ]);
         }
 

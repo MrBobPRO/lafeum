@@ -1,5 +1,11 @@
 <div class="rules">
-    <h1 class="rules__title">Ҳама</h1>
+    <h1 class="rules__title">
+        @if(isset($rules_title))
+            {{ $rules_title }}
+        @else
+            Ҳама
+        @endif
+    </h1>
 
     <form class="search rules__search" action="#">
         <span class="material-icons-outlined unselectable search__icon rules__search-icon">search</span>

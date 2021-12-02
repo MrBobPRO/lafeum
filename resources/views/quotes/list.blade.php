@@ -7,13 +7,13 @@
     <div class="card__body">
         <div class="card__categories">
             @foreach ($q->categories as $c)
-            <a class="card__categories-item" href="#">{{ $c->name }}</a>
+            <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
             @endforeach
         </div>
 
         <div class="card__header">
             <h2 class="card__header-title">{{ $q->author->name }}</h2>
-            <p class="card__header-hash">#{{ $q->id }}</p>
+            <a href="{{ route('quotes.single', $q->id) }}" class="card__header-hash">#{{ $q->id }}</a>
             <span class="card__header-icon">
                 @include("svgs.share")
             </span>
@@ -32,4 +32,4 @@
 </div>
 @endforeach
 
-{{ $quotes->onEachSide(2)->links("templates.pagination") }}
+{{ $quotes->onEachSide(1)->links("templates.pagination") }}

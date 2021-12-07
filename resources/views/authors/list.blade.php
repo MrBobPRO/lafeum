@@ -1,3 +1,7 @@
+@unless(count($authors))
+    <h1 class="no-authors-title">Ба дархости шумо ягон муаллиф ёфт нашуд !</h1>
+@endunless
+
 @foreach($authors as $a)
 <div class="card card--vertical">
     <div class="card__img-container">
@@ -7,7 +11,7 @@
     <div class="card__body">
 
         <div class="card__header">
-            <h2 class="card__header-title">{{ $a->name }}</h2>
+            <h2 class="card__header-title"><a href="{{ route('authors.single', $a->url) }}">{{ $a->name }}</a></h2>
         </div>
 
         <div class="card__text">

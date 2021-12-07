@@ -16,14 +16,14 @@
 
     {{-- Filters and search start --}}
     <section class="rules-wrapper authors-rules-wrapper">
-        @include('templates.rules')
+        @include('authors.rules')
     </section>
     {{-- Filters and search end --}}
 
-    <section class="authors-list-wrapper">
+    <section class="authors-list-wrapper" id="authors_list_wrapper">
         <h1 class="main-title authors-list-title">Ҳама муаллифон</h1>
 
-        <div class="authors-list">
+        <div class="authors-list" id="authors_list">
             @include('authors.list')
         </div>
     </section>

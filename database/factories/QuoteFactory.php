@@ -22,7 +22,7 @@ class QuoteFactory extends Factory
     public function definition()
     {
         return [
-            "body" => $this->faker->realTextBetween(50, 500),
+            "body" => $this->faker->realTextBetween(50, 500,),
             "author_id" => $this->faker->numberBetween(1,10),
             "popular" => rand(0,1)
         ];

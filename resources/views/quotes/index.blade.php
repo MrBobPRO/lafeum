@@ -16,14 +16,14 @@
 
     {{-- Filters and search start --}}
     <section class="rules-wrapper quotes-rules-wrapper">
-        @include('templates.rules')
+        @include('quotes.rules')
     </section>
     {{-- Filters and search end --}}
 
-    <section class="quotes-list-wrapper">
+    <section class="quotes-list-wrapper" id="quotes_list_wrapper">
         <h1 class="main-title quotes-list-title">Ҳама иқтибосҳо</h1>
 
-        <div class="quotes-list">
+        <div class="quotes-list" id="quotes_list">
             @include('quotes.list')
         </div>
     </section>

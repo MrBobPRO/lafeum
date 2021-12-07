@@ -17,19 +17,19 @@
                 </div>
         
                 <div class="card__header">
-                    <h2 class="card__header-title">{{ $quote->author->name }}</h2>
+                    <h2 class="card__header-title"><a href="{{ route('authors.single', $quote->author->url) }}">{{ $quote->author->name }}</a></h2>
                     <a href="{{ route('quotes.single', $quote->id) }}" class="card__header-hash">#{{ $quote->id }}</a>
                     <span class="card__header-icon">
                         @include("svgs.share")
                     </span>
                 </div>
         
-                <div class="card__text">
+                <div class="card__text" data-identificator="single_quote{{$quote->id}}">
                     {{ $quote->body}}
                 </div>
         
                 <div class="more more_align_center">
-                    <button class="more__button more__button--vertical">Идомаашро мутолиа кунед
+                    <button class="more__button more__button--vertical" data-action="expand_quote" data-quote="single_quote{{$quote->id}}">Идомаашро мутолиа кунед
                         <span class="material-icons-outlined more__icon">expand_more</span>
                     </button>
                 </div>
@@ -37,15 +37,9 @@
         </div>
     </section>   {{-- Page description end --}}
 
-    <section class="refresher quotes__refresher" id="refresher">
+    <section class="refresher single-quote__refresher" id="refresher">
         @include('templates.refresher')
     </section>
-
-    {{-- Filters and search start --}}
-    <section class="rules-wrapper quotes-rules-wrapper">
-        @include('templates.rules')
-    </section>
-    {{-- Filters and search end --}}
 
     <section class="quotes-list-wrapper">
         <h1 class="main-title quotes-list-title">Ҳама иқтибосҳои муаллиф</h1>

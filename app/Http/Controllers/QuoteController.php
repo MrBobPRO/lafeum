@@ -2,23 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
 use App\Models\Author;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 
 class QuoteController extends Controller
 {
-    public function index()
+    public function filter(Request $request)
     {
-        $quotes = Quote::latest()->paginate(6);
+        $quotes = Helper::filter_quotes($request->category_ids, $request->author_id, $request->keyword);
+        $quotes->withPath(route("quotes.index"));
 
-        return view('quotes.index', compact('quotes'));
+        return view("quotes.list", compact("quotes"));
+    }
+
+    public function index(Request $request)
+    {
+        $quotes = Helper::filter_quotes($request->category_ids, $request->author_id, $request->keyword);
+        
+        //used in filters & search
+        // Decode JSON Array because category_ids comes in encoded JSON stringify type. 
+        $active_category_ids =  $request->category_ids ? json_decode($request->category_ids) : [];
+        $author_id = $request->author_id;
+        $keyword = $request->keyword;
+
+        return view('quotes.index', compact('quotes', "active_category_ids", "author_id", "keyword"));
     }
 
     public function single($id)
     {
         $quote = Quote::find($id);
-        $quotes = Author::find($quote->author_id)->quotes()->paginate(5);
+        $quotes = Author::find($quote->author_id)->quotes()->paginate(12);
 
         return view('quotes.single', compact("quote", "quotes"));
     }

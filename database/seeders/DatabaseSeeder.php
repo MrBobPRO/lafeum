@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         $user->save();
 
         // authors factory
-        Author::factory()->count(10)->create();
+        Author::factory()->count(12)->create();
         //regenerate authors url
         $authors = Author::all();
         for($i = 0; $i < count($authors); $i++) {
@@ -34,9 +34,6 @@ class DatabaseSeeder extends Seeder
             $authors[$i]->photo = ($i + 1) . '.jpg';
             $authors[$i]->save();
         }
-
-        // quotes factory
-        Quote::factory()->count(60)->create();
 
         //categories
         $categories = ['Арзиш ва ҳадафҳо', 'Ахлоқ ва масъулият', 'Ақли эҳсосӣ', 'Бадгумонӣ', 'Бунёди ҳастӣ', 'Дастовардҳо ва сахтгирӣ', 'Зиндагии ғайримаъмулӣ ', 'Идеалӣ ва оптимизм ', 'Илм ва Фалсафа', 'Интеллект ва тафаккур', 'Маънии ҳаёт ва хушбахтӣ', 'Маъруфияти илм', 'Мураббиягарӣ', 'Муҳаббат ба ҳаёт', 'Муҳити зист ва муносибат', 'Огоҳӣ', 'Олам ва космология', 'Ояндапажӯҳӣ', 'Роҳбар', 'Рушди шахсият', 'Сабки зиндагии солим', 'Салоҳиятнокӣ', 'Соҳибкорӣ', 'Тамаддун', 'Таърихи ҳаёт дар рӯи замин', 'Таҳсилот', 'Фанноварӣ', 'Хатарҳо ва хавфҳо', 'Худбоварӣ', 'Худидоракунӣ', 'Эрудиссия', 'Эҷодиёт', 'Қобилият ва Захираҳо', 'Ҳазли соҳавӣ', 'Ҷамъият', 'Ҷаҳонбинӣ'];
@@ -48,11 +45,20 @@ class DatabaseSeeder extends Seeder
             Category::create([
                 "name" => $cat,
                 "url" => Helper::transliterate_into_latin($cat),
-                "description" => $faker->realTextBetween(50, 400),
+                "description" => $faker->realText($faker->numberBetween(50, 300))
             ]);
         }
 
         // attach categories and quotes
+        for($i = 0; $i < 60; $i++) {
+            $faker = Factory::create("ru_RU");
+            $quote = new Quote();
+            $quote->body = $faker->realText($faker->numberBetween(50, 1000));
+            $quote->author_id = rand(1,12);
+            $quote->popular = rand(0,1);
+            $quote->save();
+        }
+
         $quotes = Quote::all();
         foreach($quotes as $q) {
             $q->categories()->attach(rand(1, 15));

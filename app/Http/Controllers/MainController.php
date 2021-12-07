@@ -25,4 +25,18 @@ class MainController extends Controller
         return view("templates.refresher");
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword;
+
+        $authors = Author::where("name", "LIKE", "%" . $keyword . "%")
+                        ->orWhere("biography", "LIKE", "%" . $keyword . "%")
+                        ->orderBy("name")->get();
+
+        $quotes = Quote::where("body", "LIKE", "%" . $keyword . "%")
+                        ->latest()->get();
+
+        return view("search.index", compact("keyword", "authors", "quotes"));
+    }
+
 }

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Author;
+use App\Models\Category;
 use App\Models\Quote;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Route;
@@ -44,5 +45,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with("popular_quote", $popular_quote)
                 ->with("popular_author", $popular_author);
         });
+
+        View::composer(["quotes.rules", "authors.rules"], function ($view) {
+            $view->with('categories', Category::orderBy("name", "asc")->get())
+                ->with('route', Route::currentRouteName());
+        });
+
     }
 }

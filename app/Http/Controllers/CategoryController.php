@@ -11,11 +11,13 @@ class CategoryController extends Controller
     public function single($url)
     {
         $category = Category::where("url", $url)->first();
-        $quotes = $category->quotes()->paginate(5);
-        // $quotes = Quote::whereHas("categories", function($q) use ($category) {
-        //     $q->where("id", $category->id);
-        // })->paginate(9);
+        $quotes = $category->quotes()->paginate(12);
 
-        return view("categories.single", compact("category", "quotes"));
+        //used in filters & search
+        $active_category_ids = [$category->id];
+        $author_id = null;
+        $keyword = null;
+
+        return view("categories.single", compact("category", "quotes", "active_category_ids", "author_id", "keyword"));
     }
 }

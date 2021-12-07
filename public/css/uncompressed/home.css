@@ -5,6 +5,7 @@
     display: flex;
     gap: 30px;
     width: 100%;
+    align-items: flex-start;
 }
 
 /* Categoreis start */
@@ -26,7 +27,7 @@
     font-size: 14px;
     direction: rtl;
     overflow-y: auto;
-    height: 490px;
+    height: 491px;
     padding: 0 25px;
 }
 .categories__list::-webkit-scrollbar {
@@ -95,8 +96,19 @@
     margin: 5px;
     padding-right: 30px;
 }
+.quotes-carousel .card__header-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.quotes-carousel .card__header {
+    margin: 15px 0;
+}
 .quotes-carousel .card__text {
     padding-right: 75px;
+    -webkit-line-clamp: 6;
 }
 .quotes-carousel .more {
     padding-right: 55px;

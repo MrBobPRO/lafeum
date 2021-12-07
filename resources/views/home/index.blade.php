@@ -47,19 +47,19 @@
                                     </div>
                 
                                     <div class="card__header">
-                                        <h2 class="card__header-title">{{ $q->author->name }}</h2>
-                                        <p class="card__header-hash">#{{ $q->id }}</p>
+                                        <h2 class="card__header-title"><a href="{{ route('authors.single', $q->author->url) }}">{{ $q->author->name }}</a></h2>
+                                        <a href="{{ route('quotes.single', $q->id) }}" class="card__header-hash">#{{ $q->id }}</a>
                                         <span class="card__header-icon">
                                             @include("svgs.share")
                                         </span>
                                     </div>
                 
-                                    <div class="card__text">
+                                    <div class="card__text" data-identificator="owl_quote{{$q->id}}">
                                         {{ $q->body}}
                                     </div>
                 
                                     <div class="more more_align_center">
-                                        <button class="more__button more__button--vertical">Идомаашро мутолиа кунед
+                                        <button class="more__button more__button--vertical" data-action="expand_quote" data-quote="owl_quote{{$q->id}}">Идомаашро мутолиа кунед
                                             <span class="material-icons-outlined more__icon">expand_more</span>
                                         </button>
                                     </div>

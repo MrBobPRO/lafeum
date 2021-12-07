@@ -4,9 +4,13 @@
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдунаҳо лого">
         </a>
     
-        <form class="search" action="#">
+        <form class="search @if($route == 'search') search--active @endif" action="{{ route('search') }}">
             <span class="material-icons-outlined unselectable search__icon">search</span>
-            <input class="search__input" placeholder="Ҷӯстуҷӯ..." type="text" name="search" id="search">
+            <input class="search__input" placeholder="Ҷӯстуҷӯ..." type="text" name="keyword" id="search" required min="3"
+                @if($route == "search")
+                    value="{{$keyword}}"
+                @endif
+            >
         </form>
     
         <nav class="header__nav">

@@ -26,7 +26,10 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("/categories/{url}", "CategoryController@single")->name("categories.single");
 
     Route::post("/refresher/update", "MainController@update_refresher")->name("refresher.update");
+    Route::post("/quotes/filter", "QuoteController@filter")->name("quotes.filter");
+    Route::post("/authors/filter", "AuthorController@filter")->name("authors.filter");
 
+    Route::get("/search", "MainController@search")->name("search");
 });
 
 

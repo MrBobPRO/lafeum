@@ -10,7 +10,7 @@
         </div>
 
         <div class="refresher__card-text">
-            <h2 class="refresher__card-title">{{ $popular_quote->author->name }}</h2>
+            <h2 class="refresher__card-title"><a href="{{ route('authors.single', $popular_quote->author->url) }}">{{ $popular_quote->author->name }}</a></h2>
             <div class="refresher__card-body">
                 {{ $popular_quote->body}}
             </div>
@@ -25,9 +25,12 @@
 </div>
 {{-- Popular quote end --}}
 
-<button class="refresher__icon" id="refresher_icon">
-    @include("svgs.infinity")
-</button>
+<div class="refresher__icon-container">
+    <button class="refresher__icon" id="refresher_icon">
+        @include("svgs.infinity")
+    </button>
+</div>
+
 
 
 {{-- Popular author start --}}
@@ -40,7 +43,7 @@
         </div>
 
         <div class="refresher__card-text">
-            <h2 class="refresher__card-title">{{ $popular_author->name }}</h2>
+            <h2 class="refresher__card-title"><a href="{{ route('authors.single', $popular_author->url) }}">{{ $popular_author->name }}</a></h2>
             <div class="refresher__card-body">
                 {{ $popular_author->biography}}
             </div>

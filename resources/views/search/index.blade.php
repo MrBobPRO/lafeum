@@ -31,7 +31,7 @@
                                 </h2>
                                 <a href="{{ route('authors.single', $author->url) }}" class="card__header-hash">#{{ $author->id }}</a>
                                 <span class="card__header-icon">
-                                    @include("svgs.share")
+                                    @include("templates.share_buttons", ["share_url" => route("authors.single", $author->url)])
                                 </span>
                             </div>
                     
@@ -68,7 +68,7 @@
                                 </h2>
                                 <a href="{{ route('quotes.single', $q->id) }}" class="card__header-hash">#{{ $q->id }}</a>
                                 <span class="card__header-icon">
-                                    @include("svgs.share")
+                                    @include("templates.share_buttons", ["share_url" => route("quotes.single", $q->id)])
                                 </span>
                             </div>
                     

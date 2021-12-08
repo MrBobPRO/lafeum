@@ -49,9 +49,6 @@
                                     <div class="card__header">
                                         <h2 class="card__header-title"><a href="{{ route('authors.single', $q->author->url) }}">{{ $q->author->name }}</a></h2>
                                         <a href="{{ route('quotes.single', $q->id) }}" class="card__header-hash">#{{ $q->id }}</a>
-                                        <span class="card__header-icon">
-                                            @include("svgs.share")
-                                        </span>
                                     </div>
                 
                                     <div class="card__text" data-identificator="owl_quote{{$q->id}}">

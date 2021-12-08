@@ -1,0 +1,1 @@
+<div class="ya-share2" data-url="{{$share_url}}" data-copy="last" data-curtain data-limit="0" data-more-button-type="short" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp,skype"></div>

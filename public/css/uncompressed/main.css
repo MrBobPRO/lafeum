@@ -621,6 +621,21 @@ button {
 }
 /* Pagination end */
 
+/* Yandex share buttons start */
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more.ya-share2__link_more-button-type_short {
+    background: transparent !important;
+}
+.ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__icon_more {
+    background-image: url('/img/main/share.svg') !important;
+}
+.ya-share2__container_size_m .ya-share2__item_more.ya-share2__item_has-pretty-view .ya-share2__link_more.ya-share2__link_more-button-type_short {
+    padding: 0 !important;
+}
+.ya-share2__list.ya-share2__list_direction_horizontal > .ya-share2__item {
+    margin: 0 !important;
+}
+/* Yandex share buttons end */
+
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}

@@ -207,6 +207,8 @@ function ajax_quotes_filter() {
             quotes_list.innerHTML = response;
             //initialize expand button events and visibility for new generated quotes
             initialize_expanding_quotes();
+            //initialize yandex share buttons
+            initialize_yandex_share_buttons();
         },
 
         error: function () {
@@ -265,3 +267,14 @@ function ajax_authors_filter() {
     });
 }
 // ----------------Ajax filter & search Authors end----------------
+
+
+// ----------------Initialize yandex share buttons----------------
+function initialize_yandex_share_buttons() {
+    let myShare = document.getElementsByClassName('ya-share2');
+
+    for (share_button of myShare) {
+        Ya.share2(share_button, {});
+    }
+}
+// ----------------Initialize yandex share buttons----------------

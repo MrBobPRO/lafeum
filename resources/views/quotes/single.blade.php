@@ -20,7 +20,7 @@
                     <h2 class="card__header-title"><a href="{{ route('authors.single', $quote->author->url) }}">{{ $quote->author->name }}</a></h2>
                     <a href="{{ route('quotes.single', $quote->id) }}" class="card__header-hash">#{{ $quote->id }}</a>
                     <span class="card__header-icon">
-                        @include("svgs.share")
+                        @include("templates.share_buttons", ["share_url" => route("quotes.single", $quote->id)])
                     </span>
                 </div>
         

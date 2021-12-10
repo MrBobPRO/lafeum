@@ -10,12 +10,12 @@
             <li class="aside__nav-li">
                 <a class="aside__nav-link @if($route == 'dashboard.index' || $route == 'dashboard.quotes.single' || $route == 'dashboard.quotes.create') aside__nav-link--active @endif"
                     href="{{route('dashboard.index')}}"><span
-                        class="aside__nav-link-icon material-icons">menu_open</span> Цитаты</a>
+                        class="aside__nav-link-icon material-icons">edit</span> Цитаты</a>
             </li>
 
             <li class="aside__nav-li">
                 <a class="aside__nav-link @if($route == 'dashboard.authors.index' || $route == 'dashboard.authors.single' || $route == 'dashboard.authors.create') aside__nav-link--active @endif"
-                    href="{{route('dashboard.authors.index')}}"><span class="aside__nav-link-icon material-icons">perm_media</span>
+                    href="{{route('dashboard.authors.index')}}"><span class="aside__nav-link-icon material-icons">account_circle</span>
                     Авторы</a>
             </li>
 

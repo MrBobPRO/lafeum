@@ -53,6 +53,7 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("/authors/store", "AuthorController@store")->name("authors.store");
     Route::post("/authors/remove", "AuthorController@remove")->name("authors.remove");
     Route::post("/authors/remove_multiple", "AuthorController@remove_multiple")->name("authors.remove_multiple");
+    Route::post("/authors/image/drop", "AuthorController@drop_image")->name("authors.drop_image");
 
     //categories
     Route::get("/dashboard/categories", "CategoryController@dashboard_index")->name("dashboard.categories.index");

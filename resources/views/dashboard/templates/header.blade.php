@@ -33,7 +33,7 @@
         @break
 
         @case('dashboard.categories.create')
-        Категории / Добавить слайд
+        Категории / Добавить категорию
         @break
 
         @case('dashboard.categories.single')
@@ -59,6 +59,14 @@
         <a class="header__actions-link" href="{{route('dashboard.authors.create')}}">Добавить автора</a>
         <button class="header__actions-button" type="button" data-bs-toggle="modal"
             data-bs-target="#remove_multiple_modal">Удалить отмеченные</button>
+        @break
+
+        @case('dashboard.authors.single')
+        <form action="{{ route('authors.drop_image') }}" method="POST">
+            @csrf
+            <input type="hidden" value="{{$author->id}}" name="id">
+            <button class="header__actions-button" type="submit">Сбросить фото автора</button>
+        </form>
         @break
 
         @case('dashboard.categories.index')

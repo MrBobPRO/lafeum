@@ -13,7 +13,7 @@
     <div class="form-group">
         <label class="label">Автор <span class="required">*</span></label>
         <div class="select2_single_container form-group__select2-single">
-            <select class="select2_single" data-dropdown-css-class="select2_single_dropdown" name="author_id">
+            <select class="select2_single" data-dropdown-css-class="select2_single_dropdown" name="author_id" required>
                 @foreach ($authors as $author)
                     <option value="{{$author->id}}">{{$author->name}}</option>
                 @endforeach

@@ -15,3 +15,5 @@ yarn-error.log
 /.vscode
 
 .htaccess
+/public/img/authors/*
+!/public/img/authors/__default.jpg

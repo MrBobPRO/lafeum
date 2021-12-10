@@ -202,6 +202,20 @@ input[type="file"]:after {
     font-weight: 500;
     font-size: 15px;
 }
+.titles__item {
+    font-weight: bold;
+}
+.titles__item--center {
+    text-align: center;
+}
+.titles__item--center a {
+    margin: auto;
+}
+.titles__item--ava {
+    min-width: 130px;
+    width: 130px;
+    padding-right: 20px;
+}
 .titles__link {
     display: flex;
     gap: 2px;
@@ -251,6 +265,17 @@ input[type="file"]:after {
     display: -webkit-box;
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
+}
+.list__item-div--center {
+    text-align: center;
+}
+.list__item-ava-container {
+    min-width: 130px;
+    width: 130px;
+}
+.list__item-ava-container img {
+    width: 100%;
+    border-radius: 50%;
 }
 .list__item-controls {
     min-width: 130px;
@@ -503,9 +528,8 @@ input[type="file"]:after {
     display: flex;
     position: relative;
     border-radius: 5px;
-    border: 20px solid #F4F6F9;
+    border: 1px solid black;
     width: 50%;
-    cursor: zoom-in;
     margin-top: 10px;
 }
 .form-group__image {
@@ -519,6 +543,7 @@ input[type="file"]:after {
     padding: 5px 10px;
     max-width: 100%;
     font-size: 14px;
+    left: 0;
 }
 .form-group__select2-single {
     max-width: 100% !important;

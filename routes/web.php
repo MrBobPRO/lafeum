@@ -32,12 +32,37 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("/search", "MainController@search")->name("search");
 });
 
-
-
-
 //--------------------------Dasboard start---------------------------
 Route::group(["middleware" => "auth"], function () {
-    Route::get("/dashboard", "DashboardController@index");
+    //quotes
+    Route::get("/dashboard", "DashboardController@index")->name("dashboard.index");
+    Route::get("/dashboard/quotes/create", "QuoteController@dashboard_create")->name("dashboard.quotes.create");
+    Route::get("/dashboard/quotes/{id}", "QuoteController@dashboard_single")->name("dashboard.quotes.single");
+
+    Route::post("/quotes/update", "QuoteController@update")->name("quotes.update");
+    Route::post("/quotes/store", "QuoteController@store")->name("quotes.store");
+    Route::post("/quotes/remove", "QuoteController@remove")->name("quotes.remove");
+    Route::post("/quotes/remove_multiple", "QuoteController@remove_multiple")->name("quotes.remove_multiple");
+
+    //authors
+    Route::get("/dashboard/authors", "AuthorController@dashboard_index")->name("dashboard.authors.index");
+    Route::get("/dashboard/authors/create", "AuthorController@dashboard_create")->name("dashboard.authors.create");
+    Route::get("/dashboard/authors/{id}", "AuthorController@dashboard_single")->name("dashboard.authors.single");
+
+    Route::post("/authors/update", "AuthorController@update")->name("authors.update");
+    Route::post("/authors/store", "AuthorController@store")->name("authors.store");
+    Route::post("/authors/remove", "AuthorController@remove")->name("authors.remove");
+    Route::post("/authors/remove_multiple", "AuthorController@remove_multiple")->name("authors.remove_multiple");
+
+    //categories
+    Route::get("/dashboard/categories", "CategoryController@dashboard_index")->name("dashboard.categories.index");
+    Route::get("/dashboard/categories/create", "CategoryController@dashboard_create")->name("dashboard.categories.create");
+    Route::get("/dashboard/categories/{id}", "CategoryController@dashboard_single")->name("dashboard.categories.single");
+
+    Route::post("/categories/update", "CategoryController@update")->name("categories.update");
+    Route::post("/categories/store", "CategoryController@store")->name("categories.store");
+    Route::post("/categories/remove", "CategoryController@remove")->name("categories.remove");
+    Route::post("/categories/remove_multiple", "CategoryController@remove_multiple")->name("categories.remove_multiple");
 });
 //---------------------------Dasboard end---------------------------
 

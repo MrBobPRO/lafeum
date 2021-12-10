@@ -1,0 +1,7 @@
+
+-------------IMPORTANT--------------
+Added some modes to mysql because of some GROUP_BY errors (at dashboard sorting) in database.php file!
+
+
+-------------Select2--------------
+On single select2 open autofocus wont work with jquery 3.6. Manually fixed by JS

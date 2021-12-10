@@ -35,7 +35,7 @@
                         @foreach ($latest_quotes as $q)
                             <div class="card">
                                 <div class="card__img-container">
-                                    <img class="card__img" src="{{ asset('img/authors/thumbs/' . $q->author->photo) }}">
+                                    <img class="card__img" src="{{ asset('img/authors/' . $q->author->photo) }}">
                                 </div>
                 
                                 <div class="card__body">

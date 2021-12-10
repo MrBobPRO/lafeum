@@ -6,7 +6,7 @@
 
     <div class="refresher__card">
         <div class="refresher__card-img-container">
-            <img class="refresher__card-img" src="{{ asset('img/authors/thumbs/' . $popular_quote->author->photo) }}">
+            <img class="refresher__card-img" src="{{ asset('img/authors/' . $popular_quote->author->photo) }}">
         </div>
 
         <div class="refresher__card-text">
@@ -39,7 +39,7 @@
 
     <div class="refresher__card">
         <div class="refresher__card-img-container">
-            <img class="refresher__card-img" src="{{ asset('img/authors/thumbs/' . $popular_author->photo) }}">
+            <img class="refresher__card-img" src="{{ asset('img/authors/' . $popular_author->photo) }}">
         </div>
 
         <div class="refresher__card-text">

@@ -5,7 +5,7 @@
 @foreach($authors as $a)
 <div class="card card--vertical">
     <div class="card__img-container">
-        <img class="card__img" src="{{ asset('img/authors/thumbs/' . $a->photo) }}">
+        <img class="card__img" src="{{ asset('img/authors/' . $a->photo) }}">
     </div>
 
     <div class="card__body">

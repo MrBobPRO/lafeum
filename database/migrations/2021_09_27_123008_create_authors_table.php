@@ -18,7 +18,7 @@ class CreateAuthorsTable extends Migration
             $table->string("name")->unique();
             $table->string('url')->unique();
             $table->text("biography");
-            $table->text("photo")->default("__default.jpg");
+            $table->string("photo")->default("__default.jpg");
             $table->boolean('popular');
             $table->timestamps();
         });

@@ -71,7 +71,6 @@ button {
 }
 .more_align_right {
     justify-content: flex-end;
-    margin-top: auto;
 }
 .more_align_center {
     justify-content: center;
@@ -173,9 +172,13 @@ button {
 .card--vertical .card__text {
     -webkit-line-clamp: 5;
     padding-right: 0;
+    margin-bottom: 12px;
 }
 .card--vertical .card__header-title {
     -webkit-line-clamp: 4;
+}
+.card--vertical .more {
+    margin-top: auto;
 }
 /*------ Vertical Card end--------*/
 /* Card end */

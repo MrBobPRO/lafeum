@@ -71,6 +71,7 @@ button {
 }
 .more_align_right {
     justify-content: flex-end;
+    margin-top: auto;
 }
 .more_align_center {
     justify-content: center;
@@ -172,7 +173,6 @@ button {
 .card--vertical .card__text {
     -webkit-line-clamp: 5;
     padding-right: 0;
-    flex-grow: 1;
 }
 .card--vertical .card__header-title {
     -webkit-line-clamp: 4;

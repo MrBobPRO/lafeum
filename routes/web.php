@@ -70,6 +70,12 @@ Route::group(["middleware" => "auth"], function () {
     Route::get("/dashboard/options/{id}", "OptionController@dashboard_single")->name("dashboard.options.single");
 
     Route::post("/options/update", "OptionController@update")->name("options.update");
+
+    //top
+    Route::get("/dashboard/top", "TopController@dashboard_index")->name("dashboard.top.index");
+    Route::get("/dashboard/top/{id}", "TopController@dashboard_single")->name("dashboard.top.single");
+
+    Route::post("/top/update", "TopController@update")->name("top.update");
 });
 //---------------------------Dasboard end---------------------------
 

@@ -26,8 +26,8 @@
             </li>
 
             <li class="aside__nav-li">
-                <a class="aside__nav-link @if($route == 'dashboard.top_categories.index' || $route == 'dashboard.top_categories.single') aside__nav-link--active @endif"
-                    href="{{route('dashboard.categories.index')}}"><span class="aside__nav-link-icon material-icons">star_rate</span>
+                <a class="aside__nav-link @if($route == 'dashboard.top.index' || $route == 'dashboard.top.single') aside__nav-link--active @endif"
+                    href="{{route('dashboard.top.index')}}"><span class="aside__nav-link-icon material-icons">star_rate</span>
                     Топ категории</a>
             </li>
 

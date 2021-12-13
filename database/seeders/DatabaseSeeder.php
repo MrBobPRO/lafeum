@@ -7,6 +7,7 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Option;
 use App\Models\Quote;
+use App\Models\Top;
 use App\Models\User;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
@@ -50,6 +51,22 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        $cat = Category::find(1);
+        $cat->id = 38;
+        $cat->save();
+
+        $cat = Category::find(2);
+        $cat->id = 41;
+        $cat->save();
+
+        $cat = Category::find(3);
+        $cat->id = 37;
+        $cat->save();
+
+        $cat = Category::find(4);
+        $cat->id = 39;
+        $cat->save();
+
         // attach categories and quotes
         for($i = 0; $i < 60; $i++) {
             $faker = Factory::create("ru_RU");
@@ -62,7 +79,7 @@ class DatabaseSeeder extends Seeder
 
         $quotes = Quote::all();
         foreach($quotes as $q) {
-            $q->categories()->attach(rand(1, 15));
+            $q->categories()->attach(rand(5, 15));
             $q->categories()->attach(rand(16, 30));
         }
 
@@ -71,6 +88,28 @@ class DatabaseSeeder extends Seeder
         $option->key = "Роҷеъ ба сомона";
         $option->value = "<p>Хуш омадед, хонандаи муҳтарам.</p><p>Асоси сомона-ин иқтибосҳо ва афоризмҳо аз тамоми дунё, аз одамони комилан гуногун-шуҳратманд, на начандон машҳур, олимон, файласуфон аст. Гуфторҳои нишонрас ва ҳадафманди онҳо то рӯзҳои мо  расидаанд. Инсонҳои мазкур ба хотири саодати инсоният зиндагӣ ва эҷод кардаанд. Вақте бо андешаҳо ва гуфтори уламо ва мутафаккирони муосир ошно мешавед, метавон ба масоили мубрами ҷомеа посух дарёфт кард.</p><p>Мутолиаи хуш.</p>";
         $option->save();
+
+
+        $top = new Top();
+        $top->category_id = 38;
+        $top->image = "t1.jpg";
+        $top->save();
+
+        $top = new Top();
+        $top->category_id = 41;
+        $top->image = "t2.jpg";
+        $top->save();
+
+        $top = new Top();
+        $top->category_id = 37;
+        $top->image = "t3.jpg";
+        $top->save();
+
+        $top = new Top();
+        $top->category_id = 39;
+        $top->image = "t4.jpg";
+        $top->save();
+
 
     }
 

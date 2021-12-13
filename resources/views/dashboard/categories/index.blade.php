@@ -1,6 +1,10 @@
 @extends('dashboard.templates.master')
 @section("main")
 
+<div class="index-page-alert alert alert-success">
+    Во избежания ошибок, как минимум 1 категория должна существовать  !
+</div>
+
 {{-- Search start --}}
 <section class="search">
     <div class="select2_single_container">

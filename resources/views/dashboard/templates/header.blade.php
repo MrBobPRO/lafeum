@@ -48,6 +48,14 @@
         Текста / {{$option->key}}
         @break
 
+        @case('dashboard.top.index')
+        Топ категории
+        @break
+
+        @case('dashboard.top.single')
+        Топ категории / Топ #{{$top->id}}
+        @break
+
         @endswitch
     </h1> {{-- Header Title end --}}
 

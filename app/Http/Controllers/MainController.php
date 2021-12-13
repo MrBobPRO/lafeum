@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Author;
 use App\Models\Category;
 use App\Models\Quote;
+use App\Models\Top;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -15,9 +16,11 @@ class MainController extends Controller
                 ->select('name', 'url')
                 ->get();
 
+        $top = Top::orderBy("id", "asc")->get();
+
         $latest_quotes = Quote::latest()->take(8)->get();
 
-        return view('home.index', compact('categories', 'latest_quotes'));
+        return view('home.index', compact("categories", "latest_quotes", "top"));
     }
 
     public function update_refresher()

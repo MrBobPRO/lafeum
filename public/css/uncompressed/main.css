@@ -265,6 +265,7 @@ button {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: var(--theme-box-shadow);
+    width: calc(25% - 30px);
 }
 .category-block__name {
     background: var(--main-color);

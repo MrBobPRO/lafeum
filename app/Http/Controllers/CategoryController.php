@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helpers\Helper;
 use App\Models\Category;
 use App\Models\Quote;
+use App\Models\Top;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -87,12 +88,12 @@ class CategoryController extends Controller
 
         // Validate uique filends
         $validation_errors = [];
-        if($request->name != $category->name) {
+        if ($request->name != $category->name) {
             $duplicate = Category::where("name", $request->name)->first();
             if ($duplicate) array_push($validation_errors, "Категория с таким названием уже существует !");
         }
 
-        if(count($validation_errors) > 0) return back()->withInput()->withErrors($validation_errors);
+        if (count($validation_errors) > 0) return back()->withInput()->withErrors($validation_errors);
 
         $category->name = $request->name;
         $category->description = $request->description;
@@ -106,14 +107,24 @@ class CategoryController extends Controller
     {
         // need to get in array because of foreach multiple delete
         $ids = [$request->id];
-        $this->permanent_delete($ids);
+        $deletion = $this->permanent_delete($ids);
+        if (!$deletion) {
+            //escape Top categories error
+            $this->escape_null_top_categories();
+            return "Ошибка. Как минимум 1 категория должна существовать !";
+        }
 
         return redirect()->route("dashboard.categories.index");
     }
 
     public function remove_multiple(Request $request)
     {
-        $this->permanent_delete($request->ids);
+        $deletion = $this->permanent_delete($request->ids);
+        if (!$deletion) {
+            //escape Top categories error
+            $this->escape_null_top_categories();
+            return "Ошибка. Как минимум 1 категория должна существовать !";
+        }
 
         return redirect()->back();
     }
@@ -122,10 +133,31 @@ class CategoryController extends Controller
     {
         foreach ($ids as $id) {
             $category = Category::find($id);
+
+            //return error if there are no more categories. At least 1 category must exist
+            $exists = Category::where("id", "!=", $id)->first();
+            if (!$exists) return false;
+
             $category->quotes()->detach();
             $category->delete();
         }
+
+        //escape Top categories error
+        $this->escape_null_top_categories();
+
+        return true;
     }
 
-
+    private function escape_null_top_categories()
+    {
+        $exists = Category::first();
+        $top = Top::all();
+        foreach ($top as $t) {
+            $cat = Category::find($t->category_id);
+            if (!$cat) {
+                $t->category_id = $exists->id;
+                $t->save();
+            }
+        }
+    }
 }

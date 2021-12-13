@@ -16,4 +16,5 @@ yarn-error.log
 
 .htaccess
 /public/img/authors/*
+/public/img/categories/*
 !/public/img/authors/__default.jpg

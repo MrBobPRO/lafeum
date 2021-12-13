@@ -11,16 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
-// mix.js('resources/js/app.js', 'public/js')
-//     .styles([
-//         'resources/css/main/styles.css',
-//         'resources/css/home/styles.css',
-//         'resources/css/quotes/styles.css',
-//         'resources/css/authors/styles.css',],
-//         'public/css/app.css');
+mix.styles([
+        'public/css/uncompressed/authors.css',
+        'public/css/uncompressed/categories.css',
+        'public/css/uncompressed/home.css',
+        'public/css/uncompressed/main.css',
+        'public/css/uncompressed/quotes.css',],
+        'public/css/app.css');
 
-// if (mix.inProduction()) {
-//     mix.version();
-// }
+if (mix.inProduction()) {
+    mix.version();
+}
 
-// mix.disableNotifications();
+mix.disableNotifications();

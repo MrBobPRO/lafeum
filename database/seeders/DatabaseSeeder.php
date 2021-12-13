@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Helpers\Helper;
 use App\Models\Author;
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Quote;
 use App\Models\User;
 use Faker\Factory;
@@ -64,6 +65,12 @@ class DatabaseSeeder extends Seeder
             $q->categories()->attach(rand(1, 15));
             $q->categories()->attach(rand(16, 30));
         }
+
+        $option = new Option();
+        $option->tag = "about__text";
+        $option->key = "Роҷеъ ба сомона";
+        $option->value = "<p>Хуш омадед, хонандаи муҳтарам.</p><p>Асоси сомона-ин иқтибосҳо ва афоризмҳо аз тамоми дунё, аз одамони комилан гуногун-шуҳратманд, на начандон машҳур, олимон, файласуфон аст. Гуфторҳои нишонрас ва ҳадафманди онҳо то рӯзҳои мо  расидаанд. Инсонҳои мазкур ба хотири саодати инсоният зиндагӣ ва эҷод кардаанд. Вақте бо андешаҳо ва гуфтори уламо ва мутафаккирони муосир ошно мешавед, метавон ба масоили мубрами ҷомеа посух дарёфт кард.</p><p>Мутолиаи хуш.</p>";
+        $option->save();
 
     }
 

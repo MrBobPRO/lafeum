@@ -26,6 +26,18 @@
             </li>
 
             <li class="aside__nav-li">
+                <a class="aside__nav-link @if($route == 'dashboard.top_categories.index' || $route == 'dashboard.top_categories.single') aside__nav-link--active @endif"
+                    href="{{route('dashboard.categories.index')}}"><span class="aside__nav-link-icon material-icons">star_rate</span>
+                    Топ категории</a>
+            </li>
+
+            <li class="aside__nav-li">
+                <a class="aside__nav-link @if($route == 'dashboard.options.index' || $route == 'dashboard.options.single') aside__nav-link--active @endif"
+                    href="{{route('dashboard.options.index')}}"><span class="aside__nav-link-icon material-icons">notes</span>
+                    Текста</a>
+            </li>
+
+            <li class="aside__nav-li">
                 <form class="aside__form" method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button class="aside__form-button" type="submit"><span class="aside__form-icon material-icons">logout</span>

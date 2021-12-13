@@ -40,6 +40,14 @@
         Категории / {{$category->name}}
         @break
 
+        @case('dashboard.options.index')
+        Текста
+        @break
+
+        @case('dashboard.options.single')
+        Текста / {{$option->key}}
+        @break
+
         @endswitch
     </h1> {{-- Header Title end --}}
 

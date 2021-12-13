@@ -64,6 +64,12 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("/categories/store", "CategoryController@store")->name("categories.store");
     Route::post("/categories/remove", "CategoryController@remove")->name("categories.remove");
     Route::post("/categories/remove_multiple", "CategoryController@remove_multiple")->name("categories.remove_multiple");
+
+    //options
+    Route::get("/dashboard/options", "OptionController@dashboard_index")->name("dashboard.options.index");
+    Route::get("/dashboard/options/{id}", "OptionController@dashboard_single")->name("dashboard.options.single");
+
+    Route::post("/options/update", "OptionController@update")->name("options.update");
 });
 //---------------------------Dasboard end---------------------------
 

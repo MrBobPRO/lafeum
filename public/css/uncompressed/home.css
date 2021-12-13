@@ -27,7 +27,7 @@
     font-size: 14px;
     direction: rtl;
     overflow-y: auto;
-    height: 491px;
+    height: 490px;
     padding: 0 25px;
 }
 .categories__list::-webkit-scrollbar {
@@ -56,15 +56,15 @@
     background: white;
     border-radius: var(--theme-border-radius);
     box-shadow: var(--theme-box-shadow);
-    padding: 30px 52px;
-    margin-bottom: 30px;
+    padding: 30px 52px 16px;
+    margin-bottom: 33px;
+    font-size: 14px;
 }
 .about__title {
     margin-bottom: 10px;
 }
 .about__text {
     line-height: 1.2;
-    margin-bottom: 0;
 }
 /* About end */
 

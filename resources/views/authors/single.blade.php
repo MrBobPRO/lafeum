@@ -24,7 +24,7 @@
     <section class="single-author__about">
         <div class="card">
             <div class="card__img-container">
-                <img class="card__img" src="{{ asset('img/authors/' . $author->photo) }}">
+                <img class="card__img" src="{{ asset('img/authors/' . $author->photo) }}" alt="{{$author->name}}">
             </div>
         
             <div class="card__body">       

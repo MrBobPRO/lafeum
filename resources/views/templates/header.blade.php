@@ -1,7 +1,7 @@
 <header class="header">
     <div class="main-container header__inner">
         <a class="logo header__logo" href="{{ route("home") }}">
-            <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдунаҳо лого">
+            <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
         </a>
     
         <form class="search @if($route == 'search') search--active @endif" action="{{ route('search') }}">

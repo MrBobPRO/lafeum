@@ -22,7 +22,7 @@
     <section class="single-quote__about">
         <div class="card">
             <div class="card__img-container">
-                <img class="card__img" src="{{ asset('img/authors/' . $quote->author->photo) }}">
+                <img class="card__img" src="{{ asset('img/authors/' . $quote->author->photo) }}" alt="{{$quote->author->name}}">
             </div>
         
             <div class="card__body">

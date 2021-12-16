@@ -1,6 +1,6 @@
 @extends('templates.master')
 
-@section("title", "Авторы")
+@section("title", "Муаллифон")
 
 @section('main')
 

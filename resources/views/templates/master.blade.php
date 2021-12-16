@@ -5,11 +5,43 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Дурдонаҳо</title>
+        <title>
+            @hasSection ('title')
+                @yield('title') – Дурдонаҳо
+            @else
+                Дурдонаҳо
+            @endif
+        </title>
+
+        {{-----------Meta tags start--------- --}}
+        {{-- Same metas for all routes --}}
+        <meta name="keywords" content="Дурдонаҳо, Иқтибосҳо ва афоризмҳо, Муаллифони машҳур, Иқтибосҳои маъмул, цитаты и афоризмы"/>
+        <meta property="og:site_name" content="Дурдонаҳо">
+        <meta property="og:type" content="object" />
+        <meta name="twitter:card" content="summary_large_image">
+
+        @hasSection ('meta-tags')
+            @yield('meta-tags')
+        @else
+            <meta name="description" content="Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо ва мутафаккирони бузург.">
+            <meta property="og:description" content="Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо ва мутафаккирони бузург.">
+            <meta property="og:title" content="Дурдонаҳо" />
+            <meta property="og:image" content="{{ asset('img/main/logo-share.png') }}">
+            <meta property="og:image:alt" content="Дурдонаҳо – Лого">
+            <meta name="twitter:title" content="Дурдонаҳо">
+            <meta name="twitter:image" content="{{ asset('img/main/logo-share.png') }}">
+        @endif
+        {{----------- Meta tags end-----------}}
 
         <meta name="robots" content="none"/>
         <meta name="googlebot" content="noindex, nofollow"/>
         <meta name="yandex" content="none"/>
+
+        {{-- Favicons for all devices --}}
+        <link rel="icon" href="{{ asset('img/main/cropped-favi-32x32.png') }}" sizes="32x32">
+        <link rel="icon" href="{{ asset('img/main/cropped-favi-192x192.png') }}" sizes="192x192">
+        <link rel="apple-touch-icon-precomposed" href="{{ asset('img/main/cropped-favi-180x180.png') }}">
+        <meta name="msapplication-TileImage" content="{{ asset('img/main/cropped-favi-270x270.png') }}">
 
         {{-- Raleway Google Fonts --}}
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +76,8 @@
         {{-- Yandex share buttons --}}
         <script src="https://yastatic.net/share2/share.js"></script>
 
-        <script src="{{ asset('js/uncompressed.js') }}"></script>
-        {{-- <script src="{{ mix('js/app.js') }}"></script> --}}
+        {{-- <script src="{{ asset('js/uncompressed.js') }}"></script> --}}
+        <script src="{{ mix('js/app.js') }}"></script>
     </body>
 
 </html>

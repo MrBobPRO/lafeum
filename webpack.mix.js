@@ -11,7 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.styles([
+mix.js('public/js/uncompressed.js', 'public/js/app.js')
+    .styles([
         'public/css/uncompressed/authors.css',
         'public/css/uncompressed/categories.css',
         'public/css/uncompressed/home.css',

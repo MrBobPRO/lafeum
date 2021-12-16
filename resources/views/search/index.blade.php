@@ -1,4 +1,7 @@
 @extends('templates.master')
+
+@section("title", "Ҷӯстуҷӯ")
+
 @section('main')
 
 <div class="main-container search-page">

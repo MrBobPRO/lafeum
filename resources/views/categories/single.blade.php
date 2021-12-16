@@ -1,4 +1,22 @@
 @extends('templates.master')
+
+@section("title", $category->name)
+
+@section("meta-tags")
+    @php
+        //remove slice body
+        $share_text = $category->description;
+        $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...'    
+    @endphp
+    <meta name="description" content="{{ $share_text }}">
+    <meta property="og:description" content="{{ $share_text }}">
+    <meta property="og:title" content="{{ $category->name }}" />
+    <meta name="twitter:image" content="{{ asset('img/main/logo-share.png') }}">
+    <meta property="og:image:alt" content="{{ $category->name }}">
+    <meta name="twitter:title" content="{{ $category->name }}">
+    <meta name="twitter:image" content="{{ asset('img/main/logo-share.png') }}">
+@endsection
+
 @section('main')
 
 <div class="main-container single-category">

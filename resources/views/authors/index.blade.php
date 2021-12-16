@@ -1,4 +1,7 @@
 @extends('templates.master')
+
+@section("title", "Авторы")
+
 @section('main')
 
 <div class="main-container authors">

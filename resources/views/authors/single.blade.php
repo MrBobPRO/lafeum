@@ -1,4 +1,22 @@
 @extends('templates.master')
+
+@section("title", $author->name)
+
+@section("meta-tags")
+    @php
+        //remove slice body
+        $share_text = $author->biography;
+        $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...'    
+    @endphp
+    <meta name="description" content="{{ $share_text }}">
+    <meta property="og:description" content="{{ $share_text }}">
+    <meta property="og:title" content="{{ $author->name }}" />
+    <meta property="og:image" content="{{ asset('img/authors/' . $author->photo) }}">
+    <meta property="og:image:alt" content="{{ $author->name }}">
+    <meta name="twitter:title" content="{{ $author->name }}">
+    <meta name="twitter:image" content="{{ asset('img/authors/' . $author->photo) }}">
+@endsection
+
 @section('main')
 
 <div class="main-container single-author">

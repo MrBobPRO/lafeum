@@ -1,4 +1,7 @@
 @extends('templates.master')
+
+@section("title", "Иқтибосҳо ва афоризмҳо")
+
 @section('main')
 
 <div class="main-container quotes">
@@ -6,7 +9,7 @@
     <section class="page-desc">
         <h1 class="main-title page-desc__title">Иқтибосҳо ва афоризмҳо</h1>
         <p class="page-desc__text">
-            Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо  ва мутафаккирони бузург .
+            Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо  ва мутафаккирони бузург.
         </p>
     </section>   {{-- Page description end --}}
 

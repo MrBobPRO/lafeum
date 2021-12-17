@@ -60,6 +60,7 @@
         <link rel="stylesheet" href="{{ asset('css/uncompressed/quotes.css') }}"> --}}
 
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/media.css') }}">
     </head>
 
     <body>

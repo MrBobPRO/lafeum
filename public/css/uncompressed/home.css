@@ -27,7 +27,7 @@
     font-size: 14px;
     direction: rtl;
     overflow-y: auto;
-    height: 490px;
+    height: 522px;
     padding: 0 25px;
 }
 .categories__list::-webkit-scrollbar {

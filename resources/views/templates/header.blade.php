@@ -3,7 +3,7 @@
         <a class="logo header__logo" href="{{ route("home") }}">
             <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
         </a>
-    
+
         <form class="search @if($route == 'search') search--active @endif" action="{{ route('search') }}">
             <span class="material-icons-outlined unselectable search__icon">search</span>
             <input class="search__input" placeholder="Ҷӯстуҷӯ..." type="text" name="keyword" id="search" required min="3"
@@ -28,5 +28,31 @@
                 </li>
             </ul>
         </nav>
+    </div>
+
+    <div class="mobile-header">
+        <div class="mobile-header__logo-container">
+            <a class="logo mobile-header__logo" href="{{ route("home") }}">
+                <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
+            </a>
+        </div>
+
+        <div class="mobile-header__row">
+            <button class="button mobile-menu-toggler">
+                <span class="material-icons-outlined">
+                    menu
+                </span>
+            </button>
+    
+            <form class="search @if($route == 'search') search--active @endif" action="{{ route('search') }}">
+                <span class="material-icons-outlined unselectable search__icon">search</span>
+                <input class="search__input mobile" placeholder="Ҷӯстуҷӯ..." type="text" name="keyword" id="search" required min="3"
+                    @if($route == "search")
+                        value="{{$keyword}}"
+                    @endif
+                >
+            </form>
+        </div>
+
     </div>
 </header>

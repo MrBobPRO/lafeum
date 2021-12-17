@@ -4,14 +4,22 @@
 
 @foreach($quotes as $q)
 <div class="card">
+    {{-- Mobile categories --}}
+    <div class="card__categories card__categories--mobile">
+        @foreach ($q->categories as $c)
+            <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
+        @endforeach
+    </div>
+
     <div class="card__img-container">
         <img class="card__img" src="{{ asset('img/authors/' . $q->author->photo) }}" alt="{{$q->author->name}}">
     </div>
 
     <div class="card__body">
+        {{-- PC categories --}}
         <div class="card__categories">
             @foreach ($q->categories as $c)
-            <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
+                <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
             @endforeach
         </div>
 

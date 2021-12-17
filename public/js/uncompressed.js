@@ -278,3 +278,25 @@ function initialize_yandex_share_buttons() {
     }
 }
 // ----------------Initialize yandex share buttons----------------
+
+
+// ----------------Toogle mobile menu start----------------
+let mobile_menu = document.getElementById("mobile_menu");
+let mobile_categories = document.getElementById("mobile_categories");
+
+document.querySelectorAll("[data-action='toggle_mobile_menu']").forEach(item => {
+    item.addEventListener("click", event => {
+        mobile_menu.classList.toggle("mobile-menu--visible");
+        mobile_categories.classList.remove("mobile-categories--visible");
+    })
+});
+
+//toogle mobile categoreis
+document.querySelectorAll("[data-action='toggle_mobile_categories']").forEach(item => {
+    item.addEventListener("click", event => {
+        mobile_categories.classList.toggle("mobile-categories--visible");
+    })
+});
+// ----------------Toogle mobile menu end----------------
+
+

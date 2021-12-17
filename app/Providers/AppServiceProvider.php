@@ -37,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
             $view->with('route', Route::currentRouteName());
         });
 
+        View::composer("templates.header", function ($view) {
+            $view->with('categories', Category::orderBy("name", "asc")->select("name", "url")->get());
+        });
+
         View::composer("templates.refresher", function ($view) {
 
             $popular_quote = Quote::popular()->inRandomOrder()->first();

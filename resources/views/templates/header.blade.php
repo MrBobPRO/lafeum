@@ -30,6 +30,7 @@
         </nav>
     </div>
 
+    {{-- Mobile header start --}}
     <div class="mobile-header">
         <div class="mobile-header__logo-container">
             <a class="logo mobile-header__logo" href="{{ route("home") }}">
@@ -38,7 +39,7 @@
         </div>
 
         <div class="mobile-header__row">
-            <button class="button mobile-menu-toggler">
+            <button class="button mobile-menu-toggler" data-action="toggle_mobile_menu">
                 <span class="material-icons-outlined">
                     menu
                 </span>
@@ -54,5 +55,61 @@
             </form>
         </div>
 
-    </div>
+        {{-- Mobile menu start --}}
+        <div class="mobile-menu" id="mobile_menu">
+            <a class="logo mobile-menu__logo" href="{{ route("home") }}">
+                <img class="mobile-menu__logo-img" src="{{ asset('img/main/logo-white.png') }}" alt="Дурдонаҳо лого">
+            </a>
+
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__ul">
+                    <li class="mobile-menu__li">
+                        <a class="mobile-menu__link" href="{{ route('home') }}">Главная</a>
+                    </li>
+
+                    <li class="mobile-menu__li">
+                        <a class="mobile-menu__link" href="{{ route('quotes.index') }}">Иқтибосҳо</a>
+                    </li>
+
+                    <li class="mobile-menu__li">
+                        <a class="mobile-menu__link" href="javascript:void(0)" data-action="toggle_mobile_categories">Категорияҳо</a>
+                    </li>
+
+                    <li class="mobile-menu__li">
+                        <a class="mobile-menu__link" href="{{ route('authors.index') }}">Муаллифон</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu__close" data-action="toggle_mobile_menu">
+                <span class="material-icons-outlined">close</span>
+            </button>
+        </div> {{-- Mobile menu end --}}
+        
+        {{-- Mobile categories start --}}
+        <div class="mobile-categories" id="mobile_categories">
+            <div class="mobile-categories__controls">
+                <button class="mobile-menu__return" data-action="toggle_mobile_categories">
+                    <span class="material-icons-outlined">keyboard_backspace</span>
+                </button>
+
+                <button class="mobile-menu__close" data-action="toggle_mobile_menu">
+                    <span class="material-icons-outlined">close</span>
+                </button>
+            </div>
+
+            <h1 class="mobile-categories__title">Категорияҳо</h1>
+
+            <nav class="mobile-menu__nav">
+                <ul class="mobile-menu__ul">
+                    @foreach ($categories as $cat)
+                        <li class="mobile-menu__li">
+                            <a class="mobile-menu__link" href="{{ route('categories.single', $cat->url) }}">{{$cat->name}}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </nav>
+        </div {{-- Mobile categories end --}}
+
+    </div>  {{-- Mobile header end --}}
 </header>

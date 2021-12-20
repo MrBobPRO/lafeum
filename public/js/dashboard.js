@@ -127,7 +127,7 @@ for (i = 0; i < editors.length; i++) {
         //  leaveConfirm: 'Пожалуйста дождитесь окончания загрузки изображений на сервер! Вы уверены что хотите закрыть страницу?'
       },
     //   defaultImage: '/img/news/simditor/default/default.png', //default image thumb while uploading
-      cleanPaste: true, //clear all styles while copy pasting,
+    //  cleanPaste: true, //clear all styles while copy pasting,
       imageButton: 'upload',
       toolbar: ['title', 'bold', 'italic', 'underline', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'hr', '|', 'indent', 'outdent', 'alignment'] //image removed
    });

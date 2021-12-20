@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use App\Models\Category;
+use App\Models\Option;
 use App\Models\Quote;
 use App\Models\Top;
 use Illuminate\Http\Request;
@@ -40,6 +41,22 @@ class MainController extends Controller
                         ->latest()->get();
 
         return view("search.index", compact("keyword", "authors", "quotes"));
+    }
+
+    public function privacy_policy()
+    {
+        $option = Option::where("tag", "privacy_policy")->first();
+        $page_title = "Сиёсати маҳрамият";
+
+        return view('privacy.index', compact("option", "page_title"));
+    }
+
+    public function terms_of_use()
+    {
+        $option = Option::where("tag", "terms_of_use")->first();
+        $page_title = "Аҳдномаи истифодабарӣ";
+
+        return view('privacy.index', compact("option", "page_title"));
     }
 
 }

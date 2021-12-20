@@ -30,6 +30,9 @@ Route::group(["middleware" => "auth"], function () {
     Route::post("/authors/filter", "AuthorController@filter")->name("authors.filter");
 
     Route::get("/search", "MainController@search")->name("search");
+
+    Route::get("/privacy_policy", "MainController@privacy_policy")->name("privacy_policy");
+    Route::get("/terms_of_use", "MainController@terms_of_use")->name("terms_of_use");
 });
 
 //--------------------------Dasboard start---------------------------

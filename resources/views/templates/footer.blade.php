@@ -6,8 +6,8 @@
         </a>
 
         <div class="footer__terms">
-            <a class="footer__terms-link" href="#">Сиёсати маҳрамият</a>
-            <a class="footer__terms-link" href="#">Аҳдномаи истифодабарӣ</a>
+            <a class="footer__terms-link" href="{{ route('privacy_policy') }}">Сиёсати маҳрамият</a>
+            <a class="footer__terms-link" href="{{ route('terms_of_use') }}">Аҳдномаи истифодабарӣ</a>
             <p class="copyright">© 2017 - {{ date("Y")}} — ДУРДУНАҲО. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
         </div>
 

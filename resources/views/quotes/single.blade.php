@@ -21,6 +21,13 @@
     {{-- Page description start --}}
     <section class="single-quote__about">
         <div class="card">
+            {{-- Mobile categories --}}
+            <div class="card__categories card__categories--mobile">
+                @foreach ($quote->categories as $c)
+                    <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
+                @endforeach
+            </div>
+
             <div class="card__img-container">
                 <img class="card__img" src="{{ asset('img/authors/' . $quote->author->photo) }}" alt="{{$quote->author->name}}">
             </div>
@@ -28,7 +35,7 @@
             <div class="card__body">
                 <div class="card__categories">
                     @foreach ($quote->categories as $c)
-                    <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
+                        <a class="card__categories-item" href="{{ route('categories.single', $c->url) }}">{{ $c->name }}</a>
                     @endforeach
                 </div>
         

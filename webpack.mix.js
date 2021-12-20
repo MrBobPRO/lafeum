@@ -17,7 +17,8 @@ mix.js('public/js/uncompressed.js', 'public/js/app.js')
         'public/css/uncompressed/categories.css',
         'public/css/uncompressed/home.css',
         'public/css/uncompressed/main.css',
-        'public/css/uncompressed/quotes.css',],
+        'public/css/uncompressed/quotes.css',
+        'public/css/uncompressed/media.css',],
         'public/css/app.css');
 
 if (mix.inProduction()) {

@@ -53,14 +53,14 @@
         <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.carousel.min.css') }}">
         <link rel="stylesheet" href="{{ asset('js/owl-carousel/owl.theme.default.min.css') }}">
 
-        <link rel="stylesheet" href="{{ asset('css/uncompressed/authors.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('css/uncompressed/authors.css') }}">
         <link rel="stylesheet" href="{{ asset('css/uncompressed/categories.css') }}">
         <link rel="stylesheet" href="{{ asset('css/uncompressed/home.css') }}">
         <link rel="stylesheet" href="{{ asset('css/uncompressed/main.css') }}">
         <link rel="stylesheet" href="{{ asset('css/uncompressed/quotes.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/uncompressed/media.css') }}"> --}}
 
-        {{-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> --}}
-        <link rel="stylesheet" href="{{ asset('css/uncompressed/media.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     </head>
 
     <body>

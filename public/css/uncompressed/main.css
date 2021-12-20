@@ -157,6 +157,11 @@ button {
     width: calc(33.3% - 20px);
     padding: 30px 40px; 
 }
+.card--vertical__mobile-title {
+    display: none;
+    color: black;
+    font-weight: bold;
+}
 .card--vertical .card__img-container {
     padding: 0;
     min-width: auto;

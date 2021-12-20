@@ -6,6 +6,7 @@
 <div class="card card--vertical">
     <div class="card__img-container">
         <img class="card__img" src="{{ asset('img/authors/' . $a->photo) }}" alt="{{$a->name}}">
+        <a href="{{ route('authors.single', $a->url) }}" class="card--vertical__mobile-title">{{ $a->name }}</a>
     </div>
 
     <div class="card__body">

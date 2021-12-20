@@ -13,7 +13,12 @@
     gap: 20px;
 }
 .no-quotes-title {
-    font-style: italic;
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    padding: 20px;
+    border-radius: 50px;
+    font-weight: 600;
     font-size: 18px;
 }
 .quotes-list .pagination-container {

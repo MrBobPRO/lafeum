@@ -6,6 +6,15 @@
     .main-title {
         font-size: 16px;
     }
+    .page-desc {
+        padding: 30px;
+    }
+    .quotes-list-title, .authors-list-title {
+        padding-left: 20px;
+    }
+    .search-page__authors .main-title, .search-page__quotes .main-title {
+        padding-left: 20px;
+    }
 
 
     /* Header start */
@@ -79,6 +88,7 @@
         flex-direction: column;
         padding: 30px;
         gap: 0px;
+        width: 100%;
     }
     .card__img-container {
         padding: 0;
@@ -92,7 +102,7 @@
         width: 50%;
     }
     .card__header {
-        margin: 20px 0 25px;
+        margin: 15px 0;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
@@ -109,6 +119,34 @@
         margin-top: 20px;
     }
     /* Card end */
+
+    /* Vertical card start */
+    .card--vertical__mobile-title {
+        display: block;
+    }
+    .card--vertical .card__img-container {
+        align-items: center;
+        gap: 20px;
+    }
+    .card--vertical .card__img {
+        width: 120px;
+    }
+    .card--vertical .card__header-title {
+        display: none;
+    }
+    .card--vertical .more {
+        justify-content: center;
+    }
+    /* Vertical card end */
+
+    /* Single authors card start */
+    .single-author__about .card {
+        padding: 30px;
+    }
+    .single-author__about .card__img-container {
+        margin-bottom: 15px;
+    }
+    /* Single authors card end */
 
 
     /* Home start */
@@ -198,4 +236,30 @@
         margin-top: 20px;
     }
     /* Refresher end */
+
+
+    /* Rules start */
+    .rules {
+        gap: 20px;
+        flex-direction: column;
+    }
+    .rules__nullifier {
+        width: 100%;
+    }
+    .filters-toggler {
+        width: 100%;
+        height: 46px;
+    }
+    .category-filters__inner {
+        padding-top: 20px;
+        flex-direction: column;
+    }
+    .category-filters__button {
+        width: 100%;
+    }
+    /* Rules end */
+
+    .pagination {
+        flex-wrap: wrap;
+    }
 }

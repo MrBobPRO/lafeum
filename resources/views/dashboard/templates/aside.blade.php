@@ -1,6 +1,6 @@
 <aside class="aside" id="aside">
     <a class="aside__logo" href="{{ route('home') }}" target="_blank">
-        <img class="aside__logo-image" src="{{ asset('img/main/logo.png') }}">
+        <img class="aside__logo-image" src="{{ asset('img/main/logo.svg') }}">
     </a>
 
     <img class="aside__avatar" src="{{ asset('img/main/admin.jpg') }}">

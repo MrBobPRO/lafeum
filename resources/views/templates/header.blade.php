@@ -1,7 +1,7 @@
 <header class="header">
     <div class="main-container header__inner">
         <a class="logo header__logo" href="{{ route("home") }}">
-            <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
+            <img class="logo__img" src="{{ asset('img/main/logo.svg') }}" alt="Дурдонаҳо лого">
         </a>
 
         <form class="search @if($route == 'search') search--active @endif" action="{{ route('search') }}">
@@ -34,7 +34,7 @@
     <div class="mobile-header">
         <div class="mobile-header__logo-container">
             <a class="logo mobile-header__logo" href="{{ route("home") }}">
-                <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
+                <img class="logo__img" src="{{ asset('img/main/logo.svg') }}" alt="Дурдонаҳо лого">
             </a>
         </div>
 
@@ -58,7 +58,7 @@
         {{-- Mobile menu start --}}
         <div class="mobile-menu" id="mobile_menu">
             <a class="logo mobile-menu__logo" href="{{ route("home") }}">
-                <img class="mobile-menu__logo-img" src="{{ asset('img/main/logo-white.png') }}" alt="Дурдонаҳо лого">
+                <img class="mobile-menu__logo-img" src="{{ asset('img/main/logo-white.svg') }}" alt="Дурдонаҳо лого">
             </a>
 
             <nav class="mobile-menu__nav">

@@ -2,7 +2,7 @@
     <div class="main-container footer__inner">
 
         <a href="#" class="logo footer__logo">
-            <img class="logo__img" src="{{ asset('img/main/logo.png') }}" alt="Дурдонаҳо лого">
+            <img class="logo__img" src="{{ asset('img/main/logo.svg') }}" alt="Дурдонаҳо лого">
         </a>
 
         <div class="footer__terms">

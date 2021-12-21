@@ -169,3 +169,34 @@ if (remove_multiple_modal_button) {
     })
 }
 // -------------------Multiple Item Remove Modal end-------------------
+
+
+
+// -------------------Select all button start-------------------
+let select_all_button = document.getElementById("select_all_button");
+if (select_all_button) {
+    select_all_button.addEventListener("click", event => {
+        let checkboxes = multiple_items_form.getElementsByClassName("checkbox__input");
+        let all_checked = true;
+
+        for (chb of checkboxes) {
+            if (!chb.checked) {
+                all_checked = false;
+                break;
+            }
+        }
+        //select all items if not all of them selected
+        if (!all_checked) {
+            for (chb of checkboxes) {
+                chb.checked = true;
+            }
+        }
+        // else unselect them all
+        else {
+            for (chb of checkboxes) {
+                chb.checked = false;
+            }
+        }
+    })
+}
+// -------------------Select all button end-------------------

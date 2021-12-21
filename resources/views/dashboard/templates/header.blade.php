@@ -65,6 +65,7 @@
         @switch($route)
         @case('dashboard.index')
         <span class="header__actions-span">Элементов : {{$items_count}}</span>
+        <button class="header__actions-button" id="select_all_button" type="button">Отметить все</button>
         <a class="header__actions-link" href="{{route('dashboard.quotes.create')}}">Добавить цитату</a>
         <button class="header__actions-button" type="button" data-bs-toggle="modal"
             data-bs-target="#remove_multiple_modal">Удалить отмеченные</button>
@@ -72,6 +73,7 @@
 
         @case('dashboard.authors.index')
         <span class="header__actions-span">Элементов : {{$items_count}}</span>
+        <button class="header__actions-button" id="select_all_button" type="button">Отметить все</button>
         <a class="header__actions-link" href="{{route('dashboard.authors.create')}}">Добавить автора</a>
         <button class="header__actions-button" type="button" data-bs-toggle="modal"
             data-bs-target="#remove_multiple_modal">Удалить отмеченные</button>
@@ -87,6 +89,7 @@
 
         @case('dashboard.categories.index')
         <span class="header__actions-span">Элементов : {{$items_count}}</span>
+        <button class="header__actions-button" id="select_all_button" type="button">Отметить все</button>
         <a class="header__actions-link" href="{{route('dashboard.categories.create')}}">Добавить категорию</a>
         <button class="header__actions-button" type="button" data-bs-toggle="modal"
             data-bs-target="#remove_multiple_modal">Удалить отмеченные</button>

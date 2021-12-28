@@ -13,7 +13,7 @@ class AuthorController extends Controller
 
     public function filter(Request $request)
     {
-        $authors = Helper::filter_authors($request->category_ids, $request->keyword);
+        $authors = Helper::filter_authors($request->keyword);
         $authors->withPath(route("authors.index"));
 
         return view("authors.list", compact("authors"));
@@ -21,15 +21,12 @@ class AuthorController extends Controller
 
     public function index(Request $request)
     {
-        $authors = Helper::filter_authors($request->category_ids, $request->keyword);
-        $authors->withPath(route("authors.index"));
-
+        $authors = Helper::filter_authors($request->keyword);
+  
         //used in filters & search
-        // Decode JSON Array because category_ids comes in encoded JSON stringify type. 
-        $active_category_ids =  $request->category_ids ? json_decode($request->category_ids) : [];
         $keyword = $request->keyword;
 
-        return view('authors.index', compact('authors', "active_category_ids", "keyword"));
+        return view('authors.index', compact('authors', "keyword"));
     }
 
     public function single($url)

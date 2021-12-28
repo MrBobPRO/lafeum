@@ -116,40 +116,6 @@ function toggle_filters() { // toggle filter_toggler active class
 // ----------------Category filter toggler end----------------
 
 
-// ----------------Rules nullifier start----------------
-let rules_nullifier = document.getElementById("rules_nullifier");
-if (rules_nullifier) {
-    rules_nullifier.onclick = function () {
-        nullify_rules(rules_nullifier.dataset.source);
-    }
-}
-    
-function nullify_rules(source) {
-    // nullify keyword
-    let rules_keyword = document.getElementById("rules_keyword");
-    rules_keyword.value = '';
-
-    // nullify all category checkboxes
-    let rules_form_category_ids = $("input[name='category_ids[]']:checked").map(function () {
-        $(this).removeAttr("checked");
-    });
-
-    // remove active category classes
-    let active_buttons = document.querySelectorAll(".category-filters__button--active");
-    for (i = 0; i < active_buttons.length; i ++) {
-        active_buttons[i].classList.remove("category-filters__button--active");
-    }
-
-    if (source == "quotes") {
-        ajax_quotes_filter();
-    } else if(source == "authors") {
-        ajax_authors_filter();
-    }
-
-}
-// ----------------Rules nullifier end----------------
-
-
 // ----------------On rules search input value change start----------------
 let rules_keyword = document.getElementById("rules_keyword");
 if (rules_keyword) {
@@ -169,37 +135,17 @@ if (rules_keyword) {
 
 // ----------------Ajax filter & search Quotes start----------------
 let quotes_list = document.getElementById("quotes_list");
-if (quotes_list) {
-    document.querySelectorAll(".category-filters__button").forEach(item => {
-        item.addEventListener("click", event => { // higlight active button
-            let target = event.target;
-            target.classList.toggle("category-filters__button--active");
-            // toggle checked attribute and send ajax request
-            let checkbox = document.getElementById("cat" + target.dataset.inputId);
-            checkbox.toggleAttribute("checked")
-            ajax_quotes_filter();
-        })
-    })
-}
+let rules_category_id = document.getElementById("rules_category_id");
 
 function ajax_quotes_filter() {
-    let rules_form = $('#rules_form')[0];
-    let rules_form_data = new FormData(rules_form);
-
-    // stringify category_ids array and attach to the FormData
-    let rules_form_category_ids = $("input[name='category_ids[]']:checked").map(function () {
-        return $(this).val();
-    }).get();
-    var encoded_rules_form_category_ids = JSON.stringify(rules_form_category_ids);
-    rules_form_data.append('category_ids', encoded_rules_form_category_ids);
 
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
         url: "/quotes/filter",
-        data: rules_form_data,
-        processData: false,
-        contentType: false,
+        data: {category_id : rules_category_id.value, keyword : rules_keyword.value},
+        // processData: false,
+        // contentType: false,
         cache: false,
         timeout: 60000,
 
@@ -222,37 +168,15 @@ function ajax_quotes_filter() {
 
 // ----------------Ajax filter & search Authors start----------------
 let authors_list = document.getElementById("authors_list");
-if (authors_list) {
-    document.querySelectorAll(".category-filters__button").forEach(item => {
-        item.addEventListener("click", event => { // higlight active button
-            let target = event.target;
-            target.classList.toggle("category-filters__button--active");
-            // toggle checked attribute and send ajax request
-            let checkbox = document.getElementById("cat" + target.dataset.inputId);
-            checkbox.toggleAttribute("checked")
-            ajax_authors_filter();
-        })
-    })
-}
 
 function ajax_authors_filter() {
-    let rules_form = $('#rules_form')[0];
-    let rules_form_data = new FormData(rules_form);
-
-    // stringify category_ids array and attach to the FormData
-    let rules_form_category_ids = $("input[name='category_ids[]']:checked").map(function () {
-        return $(this).val();
-    }).get();
-    var encoded_rules_form_category_ids = JSON.stringify(rules_form_category_ids);
-    rules_form_data.append('category_ids', encoded_rules_form_category_ids);
-
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
         url: "/authors/filter",
-        data: rules_form_data,
-        processData: false,
-        contentType: false,
+        data: {keyword : rules_keyword.value},
+        // processData: false,
+        // contentType: false,
         cache: false,
         timeout: 60000,
 

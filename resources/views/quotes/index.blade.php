@@ -18,7 +18,7 @@
     </section>
 
     {{-- Filters and search start --}}
-    <section class="rules-wrapper quotes-rules-wrapper">
+    <section class="rules quotes-rules">
         @include('quotes.rules')
     </section>
     {{-- Filters and search end --}}

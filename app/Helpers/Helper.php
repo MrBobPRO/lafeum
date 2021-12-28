@@ -9,23 +9,15 @@ use Image;
 class Helper
 {
 
-    public static function filter_quotes($category_ids, $author_id, $keyword)
+    public static function filter_quotes($category_id, $keyword)
     {
         //filter categories
-        //escape empty && null errors
-        if ($category_ids && $category_ids != '[]') {
-            // Decode JSON Array because category_ids comes in encoded JSON stringify type. 
-            $decoded_category_ids = json_decode($category_ids);
-            $quotes = Quote::whereHas("categories", function ($q) use ($decoded_category_ids) {
-                $q->whereIn("id", $decoded_category_ids);
+        if ($category_id) {
+            $quotes = Quote::whereHas("categories", function ($q) use ($category_id) {
+                $q->where("id", $category_id);
             });
         } else {
             $quotes = Quote::query();
-        }
-
-        //filter author
-        if ($author_id) {
-            $quotes = $quotes->where("author_id", $author_id);
         }
 
         //filter search
@@ -33,34 +25,21 @@ class Helper
             $quotes = $quotes->where("body", "like", "%" . $keyword . "%");
         }
 
-        return $quotes->latest()->paginate(12)->appends(["category_ids" => $category_ids, "author_id" => $author_id, "keyword" => $keyword])->fragment("quotes_list_wrapper");
+        return $quotes->latest()->paginate(15)->appends(["category_id" => $category_id, "keyword" => $keyword])->fragment("quotes_list_wrapper");
     }
 
 
-    public static function filter_authors($category_ids, $keyword)
+    public static function filter_authors($keyword)
     {
-        //filter by categories
-        //escape empty && null errors
-        if ($category_ids && $category_ids != '[]') {
-            // Decode JSON Array because category_ids comes in encoded JSON stringify type. 
-            $decoded_category_ids = json_decode($category_ids);
-            $authors = Author::whereHas("quotes", function ($quotes) use ($decoded_category_ids) {
-                $quotes->whereHas("categories", function ($q) use ($decoded_category_ids) {
-                    $q->whereIn("id", $decoded_category_ids);
-                });
-            });
-        }
-        else {
+        //filter search
+        if ($keyword) {
+            $authors = Author::where("name", "like", "%" . $keyword . "%")
+                    ->orwhere("biography", "like", "%" . $keyword . "%");
+        } else {
             $authors = Author::query();
         }
 
-        //filter search
-        if ($keyword) {
-            $authors = $authors->where("name", "like", "%" . $keyword . "%")
-                            ->orwhere("biography", "like", "%" . $keyword . "%");
-        }
-
-        return $authors->orderBy("name", "asc")->paginate(15)->appends(["category_ids" => $category_ids, "keyword" => $keyword])->fragment("authors_list_wrapper");
+        return $authors->orderBy("name", "asc")->paginate(15)->appends(["keyword" => $keyword])->fragment("authors_list_wrapper");
     }
 
 

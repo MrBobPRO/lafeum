@@ -44,7 +44,6 @@ button {
     user-select: none;
 }
 
-
 /* More start */
 .more {
     margin-top: 12px;
@@ -521,11 +520,11 @@ button {
 
 
 /* Rules start */
-.rules {
+.rules__inner {
     display: flex;
     gap: 30px;
 }
-.rules__nullifier {
+.rules__all {
     width: 30%;
     margin: 0;
     background: var(--main-color);
@@ -548,6 +547,9 @@ button {
     border-radius: 25px;
     display: flex;
     justify-content: center;
+}
+.rules__search--max {
+    width: 100%;
 }
 .rules__search-icon {
     color: black;
@@ -586,6 +588,7 @@ button {
     -webkit-transition: height .5s;
     transition: height .5s;
     overflow: hidden;
+    height: 0px;
 }
 .category-filters__inner {
     display: flex;
@@ -603,13 +606,11 @@ button {
     font-size: 14px;
     background: transparent;
     align-items: center;
+    color: black;
 }
 .category-filters__button--active {
     background: var(--main-color);
     color: white;
-}
-.category-filters input {
-    display: none;
 }
 /* Rules end */
 

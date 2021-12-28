@@ -18,8 +18,13 @@
     </section>
 
     {{-- Filters and search start --}}
-    <section class="rules-wrapper authors-rules-wrapper">
-        @include('authors.rules')
+    <section class="rules authors-rules">
+        <div class="rules__inner">
+            <div class="search rules__search rules__search--max">
+                <span class="material-icons-outlined unselectable search__icon rules__search-icon">search</span>
+                <input class="search__input rules__search-input" value="{{$keyword}}" placeholder="Вожаи ҷустуҷӯро ворид кунед" type="text" id="rules_keyword" data-source="authors">
+            </div>
+        </div>
     </section>
     {{-- Filters and search end --}}
 

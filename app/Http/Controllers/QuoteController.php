@@ -12,23 +12,28 @@ class QuoteController extends Controller
 {
     public function filter(Request $request)
     {
-        $quotes = Helper::filter_quotes($request->category_ids, $request->author_id, $request->keyword);
-        $quotes->withPath(route("quotes.index"));
+        //used to get filter sort paginate etc quotes (also by ajax requests)
+        $quotes = Helper::filter_quotes($request->category_id, $request->keyword);
+        // redirect quotes.index if category_id == null
+        if(!$request->category_id) {
+            $quotes->withPath(route("quotes.index"));
+        //else redirect to single categories page
+        } else {
+            $quotes->withPath(route("categories.single", Category::find($request->category_id)->url));
+        }
 
         return view("quotes.list", compact("quotes"));
     }
 
     public function index(Request $request)
     {
-        $quotes = Helper::filter_quotes($request->category_ids, $request->author_id, $request->keyword);
-        
-        //used in filters & search
-        // Decode JSON Array because category_ids comes in encoded JSON stringify type. 
-        $active_category_ids =  $request->category_ids ? json_decode($request->category_ids) : [];
-        $author_id = $request->author_id;
+        $quotes = Helper::filter_quotes(null, $request->keyword);
+
+        //used in filtering quotes
+        $active_category_id = null;
         $keyword = $request->keyword;
 
-        return view('quotes.index', compact('quotes', "active_category_ids", "author_id", "keyword"));
+        return view('quotes.index', compact('quotes', "active_category_id", "keyword"));
     }
 
     public function single($id)

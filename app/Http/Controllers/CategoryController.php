@@ -11,17 +11,17 @@ use Illuminate\Support\Facades\Validator;
 
 class CategoryController extends Controller
 {
-    public function single($url)
+    public function single($url, Request $request)
     {
         $category = Category::where("url", $url)->first();
-        $quotes = $category->quotes()->paginate(12);
+
+        $quotes = Helper::filter_quotes($category->id, $request->keyword);
 
         //used in filters & search
-        $active_category_ids = [$category->id];
-        $author_id = null;
-        $keyword = null;
+        $active_category_id = $category->id;
+        $keyword = $request->keyword;
 
-        return view("categories.single", compact("category", "quotes", "active_category_ids", "author_id", "keyword"));
+        return view("categories.single", compact("category", "quotes", "active_category_id", "keyword"));
     }
 
 

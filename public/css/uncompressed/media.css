@@ -241,11 +241,11 @@
 
 
     /* Rules start */
-    .rules {
+    .rules__inner {
         gap: 20px;
         flex-direction: column;
     }
-    .rules__nullifier {
+    .rules__all {
         width: 100%;
     }
     .filters-toggler {
@@ -261,7 +261,9 @@
     }
     /* Rules end */
 
+    /* Pagination start */
     .pagination {
         flex-wrap: wrap;
     }
+    /* Pagination end */
 }

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(["middleware" => "auth"], function () {
+// Route::group(["middleware" => "auth"], function () {
     Route::get("/", "MainController@index")->name("home");
     //quotes
     Route::get("/quotes", "QuoteController@index")->name("quotes.index");
@@ -33,7 +33,7 @@ Route::group(["middleware" => "auth"], function () {
 
     Route::get("/privacy_policy", "MainController@privacy_policy")->name("privacy_policy");
     Route::get("/terms_of_use", "MainController@terms_of_use")->name("terms_of_use");
-});
+// });
 
 //--------------------------Dasboard start---------------------------
 Route::group(["middleware" => "auth"], function () {

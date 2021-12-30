@@ -11,8 +11,6 @@
     <meta name="description" content="{{ $share_text }}">
     <meta property="og:description" content="{{ $share_text }}">
     <meta property="og:title" content="{{ $author->name }}" />
-    <meta property="viber:title" content='{{ $author->name }} : "{{ $share_text }}"' />
-    <meta property="viber:description" content="" />
     <meta property="og:image" content="{{ asset('img/authors/' . $author->photo) }}">
     <meta property="og:image:alt" content="{{ $author->name }}">
     <meta name="twitter:title" content="{{ $author->name }}">

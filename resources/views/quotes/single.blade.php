@@ -5,11 +5,13 @@
     @php
         //remove slice body
         $share_text = $quote->body;
-        $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...'    
+        $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...';
     @endphp
     <meta name="description" content="{{ $share_text }}">
     <meta property="og:description" content="{{ $share_text }}">
     <meta property="og:title" content="{{ $quote->author->name }}" />
+    <meta property="viber:title" content='{{ $quote->author->name }} : "{{ $share_text }}"' />
+    <meta property="viber:description" content="" />
     <meta property="og:image" content="{{ asset('img/authors/' . $quote->author->photo) }}">
     <meta property="og:image:alt" content="{{ $quote->author->name }}">
     <meta name="twitter:title" content="{{ $quote->author->name }}">

@@ -23,9 +23,11 @@
         @hasSection ('meta-tags')
             @yield('meta-tags')
         @else
-            <meta name="description" content="Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо ва мутафаккирони бузург.">
-            <meta property="og:description" content="Беҳтарин иқтибосҳо ва афоризмҳои инсонҳо ва мутафаккирони бузург.">
+            <meta name="description" content="Сомонаи мазкур “Дурдонаҳо” номдошта, асоси онро  иқтибосҳо аз китобҳои сатҳи ҷаҳонӣ, суханрониҳои афроди муваффақ ва афоризмҳои файласуфону равоншиносону ...">
+            <meta property="og:description" content="Сомонаи мазкур “Дурдонаҳо” номдошта, асоси онро  иқтибосҳо аз китобҳои сатҳи ҷаҳонӣ, суханрониҳои афроди муваффақ ва афоризмҳои файласуфону равоншиносону ...">
             <meta property="og:title" content="Дурдонаҳо" />
+            <meta property="viber:title" content="Сомонаи мазкур “Дурдонаҳо” номдошта, асоси онро  иқтибосҳо аз китобҳои сатҳи ҷаҳонӣ, суханрониҳои афроди муваффақ ва афоризмҳои файласуфону равоншиносону ..." />
+            <meta property="viber:description" content="" />
             <meta property="og:image" content="{{ asset('img/main/logo-share.png') }}">
             <meta property="og:image:alt" content="Дурдонаҳо – Лого">
             <meta name="twitter:title" content="Дурдонаҳо">

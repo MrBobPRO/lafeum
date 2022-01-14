@@ -44,4 +44,4 @@
 </div>
 @endforeach
 
-{{ $quotes->onEachSide(1)->links("templates.pagination") }}
+{{ $quotes->onEachSide(3)->links("templates.pagination") }}

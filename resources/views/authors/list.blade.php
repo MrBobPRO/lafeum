@@ -28,4 +28,4 @@
 </div>
 @endforeach
 
-{{ $authors->onEachSide(1)->links("templates.pagination") }}
+{{ $authors->onEachSide(3)->links("templates.pagination") }}

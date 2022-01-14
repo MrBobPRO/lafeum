@@ -52,7 +52,7 @@
         @endforeach
     </form> {{-- Multiple Items form end --}}
 
-    {{$options->links()}}
+    {{$options->onEachSide(3)->links("templates.pagination")}}
 </section> {{-- Main list end --}}
 
 

@@ -105,7 +105,7 @@
         @endforeach
     </form> {{-- Multiple Items form end --}}
 
-    {{$categories->links()}}
+    {{$categories->onEachSide(3)->links("templates.pagination")}}
 </section> {{-- Main list end --}}
 
 

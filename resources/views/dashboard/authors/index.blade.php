@@ -129,7 +129,7 @@
         @endforeach
     </form> {{-- Multiple Items form end --}}
 
-    {{$authors->links("templates.pagination")}}
+    {{$authors->onEachSide(3)->links("templates.pagination")}}
 </section> {{-- Main list end --}}
 
 

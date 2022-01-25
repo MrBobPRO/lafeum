@@ -11,7 +11,7 @@
             <p class="copyright">© 2017 - {{ date("Y")}} — ДУРДОНАҲО. Ҳамаи ҳуқуқҳо ҳифз шудаанд.</p>
         </div>
 
-        <div class="footer__socials">
+        {{-- <div class="footer__socials">
             <p class="footer__socials-text">Моро мутолиа намоед:</p>
 
             <div class="socials">
@@ -31,7 +31,7 @@
                     @include('svgs.instagram')
                 </a>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 </footer>

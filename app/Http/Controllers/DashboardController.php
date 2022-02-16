@@ -31,12 +31,12 @@ class DashboardController extends Controller
 
         else if ($order_by == "author_name") {
             $quotes = Quote::join("authors", "quotes.author_id", "=", "authors.id")
-                    ->select("quotes.*", "authors.*", "authors.name as author_name")
+                    ->select("quotes.*", "authors.name as author_name")
                     ->orderBy($order_by, $order_type)
                     ->paginate(30, ["*"], "page", $active_page)
                     ->appends($request->except("page"));
         }
-        
+
         else {
             $quotes = Quote::orderBy($order_by, $order_type)
                     ->paginate(30, ["*"], "page", $active_page)
